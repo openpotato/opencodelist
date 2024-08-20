@@ -15,7 +15,7 @@ The main features are:
 
 ## Documentation
 
-The documentation website is part of this repository. We have implemented it using [MkDocs](https://www.mkdocs.org) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material). It is published under https://openpotato.github.io/opencoli/.
+The documentation website is part of this repository. We have implemented it using [MkDocs](https://www.mkdocs.org) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material). It is published under https://openpotato.github.io/opencodelist/.
 
 ## Can I help?
 
