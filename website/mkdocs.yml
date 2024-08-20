@@ -1,8 +1,8 @@
 # Project information
-site_name: OpenCoLi
-site_description: 'Documentation for OpenCoLi'
+site_name: OpenCodeList
+site_description: 'Documentation for OpenCodeList'
 site_author: 'STÜBER SYSTEMS GmbH'
-site_url: 'https://openpotato.github.io/opencoli'
+site_url: 'https://openpotato.github.io/opencodelist'
 
 # Copyright
 copyright:
@@ -10,7 +10,7 @@ copyright:
 
 # Repository
 repo_name: 'Auf GitHub'
-repo_url: 'https://github.com/openpotato/opencoli'
+repo_url: 'https://github.com/openpotato/opencodelist'
 
 # Theming
 theme: 

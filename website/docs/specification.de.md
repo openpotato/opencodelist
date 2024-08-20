@@ -1,6 +1,6 @@
-# OpenCoLi-Spezifikation
+# OpenCodeList-Spezifikation
 
-#### Version 0.1.2
+#### Version 0.1.3
 
 Die Schlüsselwörter "MUSS/MÜSSEN" (*Englisch: "MUST"*), "ERFORDERLICH" (*Englisch: "REQUIRED"*), "SOLLTE" (*Englisch: "SHOULD"*) und "KANN" (*Englisch: "MAY"*) in diesem Dokument sind so zu interpretieren, wie sie in ihrer englischen Übersetzung in [RFC2119 und RFC8174](https://tools.ietf.org/html/bcp14) spezifiziert sind, und nur dann, wenn sie, wie hier, in Großbuchstaben geschrieben sind.
 
@@ -8,9 +8,9 @@ Dieses Spezifikation ist lizenziert unter der [Apache License, Version 2.0](http
 
 ## Einführung
 
-Das Open Code List Representation Format (OpenCoLi) definiert ein generisches Standard-Datenformat zur Repräsentation von Code-Listen bzw. Schlüsselverzeichnissen. Basierend auf dem [JSON-Standard](https://datatracker.ietf.org/doc/html/rfc8259) kann dieses Format mit nahezu jeder Programmiersprache leicht erzeugt und gelesen werden. Mit Hilfe des [OpenCoLi Document Schema](https://github.com/openpotato/opencoli/tree/main/schemas/v0.1/schema.json) können Dokumente im OpenCoLi-Format auf ihre syntaktische Korrektheit hin validiert werden.
+Das Open Code List Representation Format (OpenCodeList) definiert ein generisches Standard-Datenformat zur Repräsentation von Code-Listen bzw. Schlüsselverzeichnissen. Basierend auf dem [JSON-Standard](https://datatracker.ietf.org/doc/html/rfc8259) kann dieses Format mit nahezu jeder Programmiersprache leicht erzeugt und gelesen werden. Mit Hilfe des [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.1/schema.json) können Dokumente im OpenCodeList-Format auf ihre syntaktische Korrektheit hin validiert werden.
 
-OpenCoLi kann zum Austausch von Code-Listen zwischen Diensten oder Anwendungen genutzt werden, als Repräsentationsformat für ofizielle Code-Listen oder als Antwortformat für API-Anfragen (z.B. für RESTful Web-Services).
+OpenCodeList kann zum Austausch von Code-Listen zwischen Diensten oder Anwendungen genutzt werden, als Repräsentationsformat für ofizielle Code-Listen oder als Antwortformat für API-Anfragen (z.B. für RESTful Web-Services).
 
 ### Was sind Code-Listen?
 
@@ -101,17 +101,17 @@ Klingt gut, hat aber einen Haken. Es existiert keine JSON-Repräsentation von "g
 
 Das bedeutet, es gibt keine offizielle Unterstützung für JSON als Datenformat und somit auch kein offizielles JSON-Schema.
 
-Wer also Code-Listen im XML-Format repräsentieren möchte, dem sei der OASIS-Standard ans Herz gelegt. Wer aber mit JSON arbeiten möchte, der hat mit OpenCoLi eine passende Alternative parat. Natürlich ist OpenCoLi erheblich vom *OASIS Code List Representation Format* beeinflusst und versucht auch weitestgehend kompatibel zu sein.
+Wer also Code-Listen im XML-Format repräsentieren möchte, dem sei der OASIS-Standard ans Herz gelegt. Wer aber mit JSON arbeiten möchte, der hat mit OpenCodeList eine passende Alternative parat. Natürlich ist OpenCodeList erheblich vom *OASIS Code List Representation Format* beeinflusst und versucht auch weitestgehend kompatibel zu sein.
 
 ## Definitionen
 
-### OpenCoLi-Dokument
+### OpenCodeList-Dokument
 
-Ein OpenCoLi-Dokument ist eine in sich geschlossene Ressource, die entweder eine Code-Liste oder eine Code-Listensammlung definiert und beschreibt. Es MÜSSEN mindestens die Felder `opencoli` sowie im gegenseitigen Ausschluss `codeList` oder `codeListSet` enthalten sein. Ein OpenCoLi-Dokument verwendet die OpenCoLi-Spezifikation und ist mit ihr konform.
+Ein OpenCodeList-Dokument ist eine in sich geschlossene Ressource, die entweder eine Code-Liste oder eine Code-Listensammlung definiert und beschreibt. Es MÜSSEN mindestens die Felder `opencodelist` sowie im gegenseitigen Ausschluss `codeList` oder `codeListSet` enthalten sein. Ein OpenCodeList-Dokument verwendet die OpenCodeList-Spezifikation und ist mit ihr konform.
 
 ### Code-Liste
 
-Eine Code-Liste ist eine klassische relationale Tabelle mit Spalten und Datenzeilen, wobei mindestens eine Spalte als Schlüssel (Code) dienen sollte. OpenCoLi erlaubt es, generische Code-Listen zu definieren.
+Eine Code-Liste ist eine klassische relationale Tabelle mit Spalten und Datenzeilen, wobei mindestens eine Spalte als Schlüssel (Code) dienen sollte. OpenCodeList erlaubt es, generische Code-Listen zu definieren.
 
 ### Code-Listensammlung
 
@@ -121,23 +121,23 @@ Eine Code-Listensammlung ist eine Liste von Verweisen auf externe Code-Listen. M
 
 ### Versionierung
 
-Die OpenCoLi-Spezifikation wird nach dem Schema `major.minor.patch` versioniert. Der Major-Minor-Teil der Versionsnummer (z. B. `0.1`) MUSS den Funktionssatz der Spezifikation bezeichnen. Die Patch-Versionen betreffen Fehler in diesem Dokument oder stellen Klarstellungen zu diesem Dokument bereit, nicht zum Funktionsumfang. Werkzeuge, die OpenCoLi in der Version `0.1` unterstützen, MÜSSEN mit allen `0.1.*` Versionen von OpenCoLi kompatibel sein. Die Patch-Version SOLLTE von den Werkzeugen NICHT berücksichtigt werden, so dass zum Beispiel kein Unterschied zwischen `0.1.0` und `0.1.1` gemacht wird.
+Die OpenCodeList-Spezifikation wird nach dem Schema `major.minor.patch` versioniert. Der Major-Minor-Teil der Versionsnummer (z. B. `0.1`) MUSS den Funktionssatz der Spezifikation bezeichnen. Die Patch-Versionen betreffen Fehler in diesem Dokument oder stellen Klarstellungen zu diesem Dokument bereit, nicht zum Funktionsumfang. Werkzeuge, die OpenCodeList in der Version `0.1` unterstützen, MÜSSEN mit allen `0.1.*` Versionen von OpenCodeList kompatibel sein. Die Patch-Version SOLLTE von den Werkzeugen NICHT berücksichtigt werden, so dass zum Beispiel kein Unterschied zwischen `0.1.0` und `0.1.1` gemacht wird.
 
-Ein OpenCoLi-Dokument enthält stets ein obligatorisches Feld `opencoli`, das die verwendete Version der OpenCoLi-Spezifikation angibt.
+Ein OpenCodeList-Dokument enthält stets ein obligatorisches Feld `opencodelist`, das die verwendete Version der OpenCodeList-Spezifikation angibt.
 
 ### Format
 
-Ein OpenCoLi-Dokument, das mit der OpenCoLi-Spezifikation konform ist, ist selbst ein JSON-Objekt, das im JSON-Format dargestellt werden kann.
+Ein OpenCodeList-Dokument, das mit der OpenCodeList-Spezifikation konform ist, ist selbst ein JSON-Objekt, das im JSON-Format dargestellt werden kann.
 
 Bei allen Feldnamen in der Spezifikation wird zwischen Groß- und Kleinschreibung unterschieden. Das Schema sieht zwei Arten von Feldern vor: Fest definierte Felder, die einen deklarierten Namen haben, und freie Felder, deren Namen aber einem bestimmten Muster (*Englisch: pattern*) entsprechen MÜSSEN. Zusatzfelder MÜSSEN innerhalb des enthaltenen JSON-Objekts eindeutige Namen haben.
 
 #### JSON Schema
 
-[JSON Schema](https://json-schema.org/) ist eine Spezifikation zur Definition von JSON-Datenstrukturen. Ein JSON-Schema wird selbst deklarativ durch [JSON](https://www.json.org/) ausgedrückt. Das [OpenCoLi Document Schema](https://github.com/openpotato/opencoli/tree/main/schemas/v0.1/schema.json) ist ein JSON-Schema für OpenCoLi-Dokumente.
+[JSON Schema](https://json-schema.org/) ist eine Spezifikation zur Definition von JSON-Datenstrukturen. Ein JSON-Schema wird selbst deklarativ durch [JSON](https://www.json.org/) ausgedrückt. Das [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.1/schema.json) ist ein JSON-Schema für OpenCodeList-Dokumente.
 
 #### Mehrsprachigkeit
 
-OpenCoLi unterstützt Mehrsprachigkeit, d.h. Text-Strings können optional mit einem oder mehreren [IETF BCP 47-Sprachtags](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) versehen werden. Hinter jedem Sprachtag kann dann die passende Übersetzung angegeben werden.  
+OpenCodeList unterstützt Mehrsprachigkeit, d.h. Text-Strings können optional mit einem oder mehreren [IETF BCP 47-Sprachtags](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) versehen werden. Hinter jedem Sprachtag kann dann die passende Übersetzung angegeben werden.  
 
 Beispiel:
 
@@ -176,7 +176,7 @@ Ein BCP 47-Sprachtag besteht aus einer Reihe von Untertags, die durch Bindestric
 
 #### Datums- und Zeitangaben
 
-Die Formatierung der Datums- und Zeitangaben in OpenCoLi sind, wie von [JSON Schema](https://json-schema.org/understanding-json-schema/reference/string.html#dates-and-times) vorgegeben, durch [RFC 3339, Abschnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6) spezifiziert.
+Die Formatierung der Datums- und Zeitangaben in OpenCodeList sind, wie von [JSON Schema](https://json-schema.org/understanding-json-schema/reference/string.html#dates-and-times) vorgegeben, durch [RFC 3339, Abschnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6) spezifiziert.
 
 Beispiele:
 
@@ -207,13 +207,13 @@ Beispiele:
 
 ### Schema
 
-#### OpenCoLi-Objekt
+#### OpenCodeList-Objekt
 
-Dies ist das Wurzelobjekt eines OpenCoLi-Dokuments und enthält folgende Felder:
+Dies ist das Wurzelobjekt eines OpenCodeList-Dokuments und enthält folgende Felder:
 
-**`opencoli`**
+**`opencodelist`**
 
-:   Ein JSON-String mit der Versionsnummer der OpenCoLi-Spezifikation. **Dieses Feld ist ERFORDERLICH**.
+:   Ein JSON-String mit der Versionsnummer der OpenCodeList-Spezifikation. **Dieses Feld ist ERFORDERLICH**.
 
 **`codeList`**
 
@@ -291,7 +291,7 @@ Das `codeListInfo`-Objekt enthält Metadaten zur Code-Liste:
 
 **`locationUri`**
 
-:   Entweder ein JSON-String im Format `uri` oder ein JSON-Array mit JSON-String-Werten im Format `uri`. Diese URIs sind vorgeschlagene Abruforte für die referenzierte Code-Liste, im OpenCoLi-Format.
+:   Entweder ein JSON-String im Format `uri` oder ein JSON-Array mit JSON-String-Werten im Format `uri`. Diese URIs sind vorgeschlagene Abruforte für die referenzierte Code-Liste, im OpenCodeList-Format.
 
 **`publishedAt`**
 
@@ -322,11 +322,11 @@ Beispiel:
   "version": "2024-07-12",
   "canonicalUri": "urn:iso:std:iso:3166-2",
   "canonicalVersionUri": "urn:iso:std:iso:3166-2:2024-07-12",
-  "locationUri": "https://github.com/openpotato/opencoli/tree/main/samples/germany.federal-state-codes-2024-07-12.json",
+  "locationUri": "https://github.com/openpotato/opencodelist/tree/main/samples/germany.federal-state-codes-2024-07-12.json",
   "publishedAt": "2024-07-12T10:00:00",
   "publishedFrom": {
-	"shortName": "OpenCoLi",
-	"url": "https://openpotato.github.io/opencoli/"
+	"shortName": "OpenCodeList",
+	"url": "https://openpotato.github.io/opencodelist/"
   },
   "language": "en"
 }
@@ -395,7 +395,7 @@ Das `codeListRef`-Objekt definiert einen Verweis auf eine externe Code-Liste:
 
 **`locationUri`**
 
-:   Entweder ein JSON-String im Format `uri` oder ein JSON-Array mit JSON-String-Werten im Format `uri`. Diese URIs sind vorgeschlagene Abruforte für die referenzierte Code-Liste, im OpenCoLi-Format.
+:   Entweder ein JSON-String im Format `uri` oder ein JSON-Array mit JSON-String-Werten im Format `uri`. Diese URIs sind vorgeschlagene Abruforte für die referenzierte Code-Liste, im OpenCodeList-Format.
 
 #### columnSet-Objekt
 
@@ -618,7 +618,7 @@ Beispiel:
 
 ### Erweiterung der Spezifikation
 
-Die OpenCoLi-Spezifikation kann an bestimmten Stellen um zusätzliche Daten erweitert werden.
+Die OpenCodeList-Spezifikation kann an bestimmten Stellen um zusätzliche Daten erweitert werden.
 
 Die Eigenschaften der Erweiterungen sind als freie Felder implementiert, denen immer ein `x-` vorangestellt werden MUSS (z.B. `x-external-id`). Der Wert kann eine Zeichenfolge, eine Zahl, ein boolescher Wert, Null, ein Objekt oder ein Array sein.
 

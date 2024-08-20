@@ -1,13 +1,13 @@
 ﻿{
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemahub.openpotato.org/opencoli/v0.1/schema.json",
-  "$comment": "v-0.1.2",
-  "title": "OpenCoLi Document Schema Specification",
-  "description": "The specification of Open Code List Representation Format (OpenCoLi) v0.1.x documents",
+  "$id": "https://schemahub.openpotato.org/opencodelist/v0.1/schema.json",
+  "$comment": "v-0.1.3",
+  "title": "OpenCodeList Document Schema Specification",
+  "description": "The specification of Open Code List Representation Format (OpenCodeList) v0.1.x documents",
   "type": "object",
   "properties": {
-    "openCoLi": {
-      "description": "The version of the OpenCoLi Document Schema",
+    "opencodelist": {
+      "description": "The version of the OpenCodeList Document Schema",
       "type": "string",
       "pattern": "^0\\.1\\.\\d+$"
     },
@@ -21,7 +21,7 @@
     }
   },
   "required": [
-    "openCoLi"
+    "opencodelist"
   ],
   "oneOf": [
     {
@@ -217,7 +217,7 @@
           ]
         },
         "locationUri": {
-          "description": "Suggested retrieval location for this version, in OpenCoLi format.",
+          "description": "Suggested retrieval location for this version, in OpenCodeList format.",
           "$ref": "#/$defs/oneOrMultipleUris"
         },
         "publishedAt": {
@@ -264,7 +264,7 @@
           "format": "uri"
         },
         "locationUri": {
-          "description": "Suggested retrieval location for this version, in OpenCoLi format.",
+          "description": "Suggested retrieval location for this version, in OpenCodeList format.",
           "$ref": "#/$defs/oneOrMultipleUris"
         }
       },
@@ -942,14 +942,14 @@
           "description": "Short name for the publisher.",
           "$ref": "#/$defs/text",
           "examples": [
-            "OpenCoLi"
+            "OpenCodeList"
           ]
         },
         "longName": {
           "description": "Human-readable name for the publisher.",
           "$ref": "#/$defs/text",
           "examples": [
-            "The OpenCoLi Project"
+            "The OpenCodeList Project"
           ]
         },
         "url": {
