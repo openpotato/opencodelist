@@ -436,7 +436,8 @@ The `column` object defines a column for a code list:
 **`type`**
 
 :   Defines the data type of the column. **This field is REQUIRED**. It MUST be a JSON string with one of these values:
-    + `string`
+
+	+ `string`
     + `enum`
     + `enum-set`
     + `integer`

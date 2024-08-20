@@ -436,6 +436,7 @@ Das `column`-Objekt definiert eine Spalte für einer Code-Liste:
 **`type`**
 
 :   Definiert den Datentyp der Spalte. **Dieses Feld ist ERFORDERLICH**. Es MUSS ein JSON-String mit einem dieser Werte sein:
+
     + `string`
     + `enum`
     + `enum-set`
