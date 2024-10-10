@@ -458,65 +458,65 @@ Abhängig vom Wert in `type` sind weitere Eigenschaften verfügbar.
 
 Repräsentiert einen JSON-String. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `minLength` : Eine JSON-Nummer im Format `integer` mit der minimalen zulässigen Anzahl an Zeichen
-+ `maxLength` : Eine JSON-Nummer im Format `integer` mit der maximalen zulässigen Anzahl an Zeichen
-+ `pattern` : Eine JSON-String mit einem regulären Ausdruck, der stets zu den Werten in dieser Spalte passen muss.
-+ `language` : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) sein.
++ **`minLength` : Eine JSON-Nummer im Format `integer` mit der minimalen zulässigen Anzahl an Zeichen
++ **`maxLength` : Eine JSON-Nummer im Format `integer` mit der maximalen zulässigen Anzahl an Zeichen
++ **`pattern` : Eine JSON-String mit einem regulären Ausdruck, der stets zu den Werten in dieser Spalte passen muss.
++ **`language` : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) sein.
 
 ##### enum
 
 Einen JSON-String, der ein Aufzählung repräsentiert. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `members` : Definiert die möglichen Werte der Auszählung. Es MUSS ein JSON-Array mit `enumMember`-Objekten sein. **Dieses Feld ist ERFORDERLICH**.
++ **`members` : Definiert die möglichen Werte der Auszählung. Es MUSS ein JSON-Array mit `enumMember`-Objekten sein. **Dieses Feld ist ERFORDERLICH**.
 
 ##### enum-set
 
 Einen JSON-String, der eine Aufzählungmenge repräsentiert, formatiert als CSV-String. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `delimiterChar` : Ein JSON-String, der das CSV-Trennzeichen definiert.
-+ `quoteChar` : Ein JSON-String, der das CSV-Begrenzungszeichen definiert.
-+ `members` : Definiert die möglichen Werte der Aufzählung. Es MUSS ein JSON-Array mit `enumMember`-Objekten sein. **Dieses Feld ist ERFORDERLICH**.
++ **`delimiterChar`** : Ein JSON-String, der das CSV-Trennzeichen definiert.
++ **`quoteChar`** : Ein JSON-String, der das CSV-Begrenzungszeichen definiert.
++ **`members`** : Definiert die möglichen Werte der Aufzählung. Es MUSS ein JSON-Array mit `enumMember`-Objekten sein. **Dieses Feld ist ERFORDERLICH**.
 
 ##### integer
 
 Repräsentiert eine JSON-Nummer im Format `integer`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `minValue` : Eine JSON-Nummer im Format `integer` mit dem zulässigen Minimalwert
-+ `maxValue` : Eine JSON-Nummer im Format `integer` mit dem zulässigen Minimalwert
++ **`minValue`** : Eine JSON-Nummer im Format `integer` mit dem zulässigen Minimalwert
++ **`maxValue`** : Eine JSON-Nummer im Format `integer` mit dem zulässigen Minimalwert
 
 ##### number
 
 Repräsentiert eine JSON-Nummer im Format `number`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `minValue` : Eine JSON-Nummer im Format `number` mit dem zulässigen Minimalwert
-+ `maxValue` : Eine JSON-Nummer im Format `number` mit dem zulässigen Minimalwert
++ **`minValue`** : Eine JSON-Nummer im Format `number` mit dem zulässigen Minimalwert
++ **`maxValue`** : Eine JSON-Nummer im Format `number` mit dem zulässigen Minimalwert
 
 ##### date
 
 Repräsentiert ein JSON-String im Format `date`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `minValue` : Ein JSON-String im Format `date` mit dem zulässigen Minimalwert
-+ `maxValue` : Ein JSON-String im Format `date` mit dem zulässigen Minimalwert
++ **`minValue`** : Ein JSON-String im Format `date` mit dem zulässigen Minimalwert
++ **`maxValue`** : Ein JSON-String im Format `date` mit dem zulässigen Minimalwert
 
 ##### date-time
 
 Repräsentiert ein JSON-String im Format `date-time`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `minValue` : Ein JSON-String im Format `date-time` mit dem zulässigen Minimalwert
-+ `maxValue` : Ein JSON-String im Format `date-time` mit dem zulässigen Minimalwert
++ **`minValue`** : Ein JSON-String im Format `date-time` mit dem zulässigen Minimalwert
++ **`maxValue`** : Ein JSON-String im Format `date-time` mit dem zulässigen Minimalwert
 
 ##### time
 
 Repräsentiert ein JSON-String im Format `time`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `minValue` : Ein JSON-String im Format `time` mit dem zulässigen Minimalwert
-+ `maxValue` : Ein JSON-String im Format `time` mit dem zulässigen Minimalwert
++ **`minValue`** : Ein JSON-String im Format `time` mit dem zulässigen Minimalwert
++ **`maxValue`** : Ein JSON-String im Format `time` mit dem zulässigen Minimalwert
 
 ##### object
 
 Repräsentiert ein JSON-Objekt. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ `schemaUri` : Ein JSON-String im Format `uri`. Diese URI ist der Abrufort des JSON-Schemas für diese Spalte.
++ **`schemaUri`** : Ein JSON-String im Format `uri`. Diese URI ist der Abrufort des JSON-Schemas für diese Spalte.
 
 #### enumMember-Objekt
 

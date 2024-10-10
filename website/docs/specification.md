@@ -458,31 +458,31 @@ Depending on the value in `type`, further properties are available.
 
 Represents a JSON string. The following additional schema properties are available:
 
-+ `minLength` : A JSON number in `integer` format with the minimum allowable number of characters
-+ `maxLength` : A JSON number in `integer` format with the maximum allowable number of characters
-+ `pattern` : A JSON string with a regular expression that must always match the values in this column.
-+ `language` : A JSON string with the language for the contents of this column. This MUST be an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
++ **`minLength`** : A JSON number in `integer` format with the minimum allowable number of characters
++ **`maxLength`** : A JSON number in `integer` format with the maximum allowable number of characters
++ **`pattern`** : A JSON string with a regular expression that must always match the values in this column.
++ **`language`** : A JSON string with the language for the contents of this column. This MUST be an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
 
 ##### enum
 
 A JSON string representing an enumeration. The following additional schema properties are available:
 
-+ `members` : Defines the possible values of the enumeration. It MUST be a JSON array of `enumMember` objects. **This field is REQUIRED**.
++ **`members`** : Defines the possible values of the enumeration. It MUST be a JSON array of `enumMember` objects. **This field is REQUIRED**.
 
 ##### enum-set
 
 A JSON string representing an enumeration set, formatted as a CSV string. The following additional schema properties are available:
 
-+ `delimiterChar` : A JSON string defining the CSV delimiter.
-+ `quoteChar` : A JSON string defining the CSV quote character.
-+ `members` : Defines the possible values of the enumeration. It MUST be a JSON array of `enumMember` objects. **This field is REQUIRED**.
++ **`delimiterChar`** : A JSON string defining the CSV delimiter.
++ **`quoteChar`** : A JSON string defining the CSV quote character.
++ **`members`** : Defines the possible values of the enumeration. It MUST be a JSON array of `enumMember` objects. **This field is REQUIRED**.
 
 ##### integer
 
 Represents a JSON number in `integer` format. The following additional schema properties are available:
 
-+ `minValue` : A JSON number in `integer` format with the minimum allowable value
-+ `maxValue` : A JSON number in `integer` format with the maximum allowable value
++ **`minValue`** : A JSON number in `integer` format with the minimum allowable value
++ **`maxValue`** : A JSON number in `integer` format with the maximum allowable value
 
 ##### number
 
@@ -495,10 +495,8 @@ Represents a JSON number in `number` format. The following additional schema pro
 
 Represents a JSON string in `date` format. The following additional schema properties are available:
 
-+ `minValue` : A JSON string in `date` format with the minimum allowable value
-+ `maxValue` : A JSON string in `date` format with the minimum allowable value
-
-Here’s the translation into British English:
++ **`minValue`** : A JSON string in `date` format with the minimum allowable value
++ **`maxValue`** : A JSON string in `date` format with the minimum allowable value
 
 ##### date-time
 
