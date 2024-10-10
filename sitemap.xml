@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://openpotato.github.io/opencodelist/</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://openpotato.github.io/opencodelist/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://openpotato.github.io/opencodelist/de/"/>
+    </url>
+    <url>
+        <loc>https://openpotato.github.io/opencodelist/change-log/</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://openpotato.github.io/opencodelist/change-log/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://openpotato.github.io/opencodelist/de/change-log/"/>
+    </url>
+    <url>
+        <loc>https://openpotato.github.io/opencodelist/community/</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://openpotato.github.io/opencodelist/community/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://openpotato.github.io/opencodelist/de/community/"/>
+    </url>
+    <url>
+        <loc>https://openpotato.github.io/opencodelist/specification/</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://openpotato.github.io/opencodelist/specification/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://openpotato.github.io/opencodelist/de/specification/"/>
+    </url>
+    <url>
+        <loc>https://openpotato.github.io/opencodelist/de/</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://openpotato.github.io/opencodelist/de/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://openpotato.github.io/opencodelist/"/>
+    </url>
+    <url>
+        <loc>https://openpotato.github.io/opencodelist/de/change-log/</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://openpotato.github.io/opencodelist/de/change-log/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://openpotato.github.io/opencodelist/change-log/"/>
+    </url>
+    <url>
+        <loc>https://openpotato.github.io/opencodelist/de/community/</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://openpotato.github.io/opencodelist/de/community/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://openpotato.github.io/opencodelist/community/"/>
+    </url>
+    <url>
+        <loc>https://openpotato.github.io/opencodelist/de/specification/</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://openpotato.github.io/opencodelist/de/specification/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://openpotato.github.io/opencodelist/specification/"/>
+    </url>
+</urlset>
