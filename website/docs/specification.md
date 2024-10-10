@@ -488,8 +488,8 @@ Represents a JSON number in `integer` format. The following additional schema pr
 
 Represents a JSON number in `number` format. The following additional schema properties are available:
 
-+ `minValue` : A JSON number in `number` format with the minimum allowable value
-+ `maxValue` : A JSON number in `number` format with the maximum allowable value
++ **`minValue`** : A JSON number in `number` format with the minimum allowable value
++ **`maxValue`** : A JSON number in `number` format with the maximum allowable value
 
 ##### date
 
