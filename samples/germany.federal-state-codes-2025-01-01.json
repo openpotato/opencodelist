@@ -1,0 +1,116 @@
+{
+  "$opencodelist": "0.2.0",
+  "codeList": {
+    "identification": {
+      "language": "en",
+      "shortName": "GermanFederalStateCodes",
+      "longName": "ISO 3166-2 Codes for Germany",
+      "description": "ISO 3166-2 Codes for the federal states of Germany",
+      "version": "2025-01-01",
+      "publishedAt": "2025-01-01T12:00:00",
+      "publisher": {
+        "shortName": "OpenCodeList",
+        "url": "https://openpotato.github.io/opencodelist/"
+      },
+      "canonicalUri": "urn:iso:std:iso:3166-2",
+      "canonicalVersionUri": "urn:iso:std:iso:3166-2:2025-01-01",
+      "locationUrls": [
+        "https://raw.githubusercontent.com/openpotato/opencodelist/main/samples/germany.federal-state-codes-2025-01-01.json"
+      ]
+    },
+    "columnSet": {
+      "columns": [
+        {
+          "id": "code",
+          "name": "Code",
+          "type": "string"
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "string"
+        }
+      ],
+      "keys": [
+        {
+          "id": "codeKey",
+          "name": "Code Key",
+          "columnIds": [
+            "code"
+          ]
+        }
+      ],
+      "defaultKey": {
+        "keyId": "codeKey"
+      }
+    },
+    "dataSet": {
+      "rows": [
+        {
+          "code": "BW",
+          "name": "Baden-Württemberg"
+        },
+        {
+          "code": "BY",
+          "name": "Bavaria"
+        },
+        {
+          "code": "BE",
+          "name": "Berlin"
+        },
+        {
+          "code": "BB",
+          "name": "Brandenburg"
+        },
+        {
+          "code": "HB",
+          "name": "Bremen"
+        },
+        {
+          "code": "HH",
+          "name": "Hamburg"
+        },
+        {
+          "code": "HE",
+          "name": "Hesse"
+        },
+        {
+          "code": "MV",
+          "name": "Mecklenburg-Western Pomerania"
+        },
+        {
+          "code": "NI",
+          "name": "Lower Saxony"
+        },
+        {
+          "code": "NW",
+          "name": "North Rhine-Westphalia"
+        },
+        {
+          "code": "RP",
+          "name": "Rhineland-Palatinate"
+        },
+        {
+          "code": "SL",
+          "name": "Saarland"
+        },
+        {
+          "code": "SN",
+          "name": "Saxony"
+        },
+        {
+          "code": "ST",
+          "name": "Saxony-Anhalt"
+        },
+        {
+          "code": "SH",
+          "name": "Schleswig-Holstein"
+        },
+        {
+          "code": "TH",
+          "name": "Thuringia"
+        }
+      ]
+    }
+  }
+}

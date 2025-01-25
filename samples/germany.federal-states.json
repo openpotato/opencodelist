@@ -1,0 +1,33 @@
+{
+  "$opencodelist": "0.2.0",
+  "codeListSet": {
+    "identification": {
+      "language": "en",
+      "shortName": "GermanFederalStates",
+      "longName": "ISO 3166-2 Codes for Germany",
+      "description": "ISO 3166-2 Codes for the federal states of Germany",
+      "version": "2025-01-01",
+      "publishedAt": "2025-01-01T12:00:00",
+      "publisher": {
+        "shortName": "ISO",
+        "longName": "International Organization for Standardization",
+        "url": "https://www.iso.org/"
+      },
+      "canonicalUri": "urn:iso:std:iso:3166-2",
+      "canonicalVersionUri": "urn:iso:std:iso:3166-2:2025-01-01",
+      "locationUrls": [
+        "https://raw.githubusercontent.com/openpotato/opencodelist/main/samples/germany.federal-states-2025-01-01.json"
+      ]
+    },
+    "referenceSet": [
+      {
+        "type": "codeListRef",
+        "canonicalUri": "urn:iso:std:iso:3166-2",
+        "canonicalVersionUri": "urn:iso:std:iso:3166-2:2025-01-01",
+        "locationUrls": [
+          "https://raw.githubusercontent.com/openpotato/opencodelist/main/samples/germany.federal-state-codes-2025-01-01.json"
+        ]
+      }
+    ]
+  }
+}

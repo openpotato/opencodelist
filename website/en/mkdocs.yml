@@ -1,0 +1,99 @@
+# Project information
+site_name: OpenCodeList
+site_description: 'Documentation for OpenCodeList'
+site_author: 'STÜBER SYSTEMS GmbH'
+site_url: 'https://openpotato.github.io/opencodelist'
+
+# Copyright
+copyright:
+  '&copy; 2025 STÜBER SYSTEMS GmbH : <a href="https://legal.stueber.de/imprint.php">Imprint</a> : <a href="https://legal.stueber.de/privacy.php">Privacy</a>'
+
+# Repository
+repo_name: 'On GitHub'
+repo_url: 'https://github.com/openpotato/opencodelist'
+
+# Theming
+theme:
+  name: material
+  language: en
+  features:
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.sections
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: 'red'
+      accent: 'red'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: 'red'
+      accent: 'red'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font: false
+  favicon: 'assets/logos/favicon.ico'
+  logo: 'assets/logos/logo.svg'
+  include_search_page: false
+  search_index_only: true
+  static_templates:
+    - 404.html
+    
+# Social media & multi language
+extra:
+  social:
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/openpotato.org
+    - icon: fontawesome/brands/mastodon 
+      link: https://fosstodon.org/@openpotato
+  alternate:
+    - name: Deutsch
+      link: /opencodelist/de/
+      lang: de
+    - name: English
+      lang: en
+
+# Customization
+extra_css:
+  - assets/css/custom.css
+
+# Plugins
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+# Extensions
+markdown_extensions:
+  - toc:
+      permalink: true
+  - def_list
+  - admonition
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg      
+
+# Navigation  
+nav:
+  - Introduction: index.md
+  - Specification: specification.md
+  - Libraries: libraries.md
+  - Community: community.md
+  - Change Log: change-log.md
