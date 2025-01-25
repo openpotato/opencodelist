@@ -1,0 +1,205 @@
+{
+  "$opencodelist": "0.2.0",
+  "codeList": {
+    "identification": {
+      "language": "en",
+      "shortName": "GermanFederalStateCapitals",
+      "longName": "Capitals of the German federal states",
+      "version": "2025-01-01",
+      "publishedAt": "2025-01-01T12:00:00+02:00",
+      "publisher": {
+        "shortName": "OpenCodeList",
+        "url": "https://openpotato.github.io/opencodelist/"
+      },
+      "canonicalUri": "urn:opencodelist-sample:germany.federal-state-capitals",
+      "canonicalVersionUri": "urn:opencodelist-sample:germany.federal-state-capitals:2025-01-01",
+      "locationUrls": [
+        "https://raw.githubusercontent.com/openpotato/opencodelist/main/samples/germany.federal-state-capitals-2024-10-10.json"
+      ]
+    },
+    "columnSet": {
+      "columns": [
+        {
+          "id": "code",
+          "name": "Code",
+          "type": "string"
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "id": "federalState",
+          "name": "FederalState",
+          "type": "enum",
+          "members": [
+            {
+              "value": "BB"
+            },
+            {
+              "value": "BE"
+            },
+            {
+              "value": "BW"
+            },
+            {
+              "value": "BY"
+            },
+            {
+              "value": "HB"
+            },
+            {
+              "value": "HE"
+            },
+            {
+              "value": "HH"
+            },
+            {
+              "value": "MV"
+            },
+            {
+              "value": "NI"
+            },
+            {
+              "value": "NW"
+            },
+            {
+              "value": "RP"
+            },
+            {
+              "value": "SH"
+            },
+            {
+              "value": "SL"
+            },
+            {
+              "value": "SN"
+            },
+            {
+              "value": "ST"
+            },
+            {
+              "value": "TH"
+            }
+          ]
+        }
+      ],
+      "keys": [
+        {
+          "id": "codeKey",
+          "name": "Primary Key",
+          "columnIds": [
+            "code"
+          ]
+        }
+      ],
+      "defaultKey": {
+        "keyId": "codeKey"
+      },
+      "foreignKeys": [
+        {
+          "id": "foreignKey",
+          "name": "Foreign Key",
+          "columnIds": [
+            "federalState"
+          ],
+          "keyRef": {
+            "codeListRef": {
+              "canonicalUri": "urn:iso:std:iso:3166-2",
+              "canonicalVersionUri": "urn:iso:std:iso:3166-2:2024-07-12",
+              "locationUrls": [
+                "https://raw.githubusercontent.com/openpotato/opencodelist/main/samples/germany.federal-state-codes-2024-07-12.json"
+              ]
+            },
+            "keyId": "codeKey"
+          }
+        }
+      ]
+    },
+    "dataSet": {
+      "rows": [
+        {
+          "code": "S",
+          "name": "Stuttgart",
+          "federalState": "BW"
+        },
+        {
+          "code": "M",
+          "name": "Munich",
+          "federalState": "BY"
+        },
+        {
+          "code": "B",
+          "name": "Berlin",
+          "federalState": "BE"
+        },
+        {
+          "code": "P",
+          "name": "Potsdam",
+          "federalState": "BB"
+        },
+        {
+          "code": "HB",
+          "name": "Bremen",
+          "federalState": "HB"
+        },
+        {
+          "code": "HH",
+          "name": "Hamburg",
+          "federalState": "HH"
+        },
+        {
+          "code": "WI",
+          "name": "Wiesbaden",
+          "federalState": "HE"
+        },
+        {
+          "code": "SN",
+          "name": "Schwerin",
+          "federalState": "MV"
+        },
+        {
+          "code": "H",
+          "name": "Hannover",
+          "federalState": "NI"
+        },
+        {
+          "code": "D",
+          "name": "Düsseldorf",
+          "federalState": "NW"
+        },
+        {
+          "code": "MZ",
+          "name": "Mainz",
+          "federalState": "RP"
+        },
+        {
+          "code": "SB",
+          "name": "Saarbrücken",
+          "federalState": "SL"
+        },
+        {
+          "code": "DD",
+          "name": "Dresden",
+          "federalState": "SN"
+        },
+        {
+          "code": "MD",
+          "name": "Magdeburg",
+          "federalState": "ST"
+        },
+        {
+          "code": "KI",
+          "name": "Kiel",
+          "federalState": "SH"
+        },
+        {
+          "code": "EF",
+          "name": "Erfurt",
+          "federalState": "TH"
+        }
+      ]
+    }
+  }
+}

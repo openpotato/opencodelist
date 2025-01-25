@@ -1,0 +1,31 @@
+name: publish 
+on:
+  push:
+    branches: 
+      - main
+  workflow_dispatch:      
+permissions:
+  contents: write
+jobs:
+  deploy:
+    name: Build and publish MkDocs websites
+    if: github.event.repository.fork == false    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - name: Install dependencies
+        run: pip install mkdocs-material mkdocs-minify-plugin
+      - name: Build English docs
+        run: mkdocs build -f website/en/mkdocs.yml -d ../../publish/en/
+      - name: Build German docs
+        run: mkdocs build -f website/de/mkdocs.yml -d ../../publish/de/
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./publish
