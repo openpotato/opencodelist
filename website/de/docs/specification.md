@@ -442,17 +442,17 @@ Beispiel:
   "shortName": "GermanFederalStateCodes",
   "longName": "ISO 3166-2 Codes for Germany",
   "description": "ISO 3166-2 Codes for the federal states of Germany",
-  "publishedAt": "2024-10-10T12:00:00",
+  "publishedAt": "2017-11-24T12:00:00",
   "publisher": {
     "shortName": "ISO",
     "longName": "International Organization for Standardization",
     "url": "https://www.iso.org/"
   },
-  "version": "2024-10-10",
-  "canonicalUri": "urn:iso:std:iso:3166-2",
-  "canonicalVersionUri": "urn:iso:std:iso:3166-2:2024-10-10",
+  "version": "2017-11-23",
+  "canonicalUri": "urn:iso:std:iso:3166-2:de",
+  "canonicalVersionUri": "urn:iso:std:iso:3166-2:de:2017-11-23",
   "locationUrls": [
-    "https://github.com/openpotato/opencodelist/tree/main/samples/germany.federal-state-codes-2024-10-10.json"
+    "https://iso.example.com/germany.federal-state-codes-2017-11-23.json"
   ]
 }
 ```
@@ -758,10 +758,10 @@ Beispiel:
     ],
     "keyRef": {
 	  "codeListRef": {
-	    "canonicalUri": "urn:iso:std:iso:3166-2",
-	    "canonicalVersionUri": "urn:iso:std:iso:3166-2:2024-07-12",
+	    "canonicalUri": "urn:iso:std:iso:3166-2:de",
+	    "canonicalVersionUri": "urn:iso:std:iso:3166-2:de:2017-11-23",
   	    "locationUrls": [
-		  "https://raw.githubusercontent.com/openpotato/opencodelist/main/samples/germany.federal-state-codes-2024-07-12.json"
+	      "https://iso.example.com/germany.federal-state-codes-2017-11-23.json"
 		]
 	  },
 	  "keyId": "codeKey"
