@@ -9,7 +9,7 @@ Die wesentlichen Eigenschaften sind:
 + Unterstützung von Mehrsprachigkeit
 + Unterstützung von mehrspaltigen Schlüsseln
 + Unterstützung von mehrspaltigen Fremdschlüsseln als Verweis auf externe Codelisten
-+ OpenCodeList-Dokumente können gegen das [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/blob/main/schemas/v0.2/schema.json) validiert werden.
++ OpenCodeList-Dokumente können gegen das [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/blob/main/schemas/v0.3/schema.json) validiert werden.
 + Semantisch weitestgehend kompatibel mit [Code List Representation (genericode)](https://docs.oasis-open.org/codelist/genericode/v1.0/genericode-v1.0.html)
 + Open Source
 

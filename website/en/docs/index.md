@@ -9,7 +9,7 @@ The main features are:
 + Support for multilingual strings
 + Support for multi-column keys
 + Support for multi-column foreign keys as reference to external code lists
-+ OpenCodeList documents can be validated against the [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/blob/main/schemas/v0.2/schema.json)
++ OpenCodeList documents can be validated against the [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/blob/main/schemas/v0.3/schema.json)
 + Semantically largely compatible with [Code List Representation (genericode)](https://docs.oasis-open.org/codelist/genericode/v1.0/genericode-v1.0.html)
 + Open Source
 
