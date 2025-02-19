@@ -414,7 +414,7 @@ Das `identification`-Objekt enthält Metainformationen zu einem OpenCodeList-Dok
 
 **`canonicalUri`**
 
-:   Ein JSON-String im Format `uri`. Diese URI identifiziert alle Versionen (zusammen) dieses Dokuments eindeutig. 
+:   Ein JSON-String im Format `uri`. Diese URI identifiziert alle Versionen (zusammen) dieses Dokuments eindeutig. **Diese Eigenschaft ist ERFORDERLICH**.
 
 **`canonicalVersionUri`**
 
@@ -788,11 +788,11 @@ Das `codeListRef`-Objekt definiert einen Verweis auf eine externe CodeList-Dokum
 
 **`canonicalUri`**
 
-:   Ein JSON-String im Format `uri`. Diese URI identifiziert alle Versionen (zusammen) der referenzierten Code-Liste eindeutig. 
+:   Ein JSON-String im Format `uri`. Diese URI identifiziert alle Versionen (zusammen) der referenzierten Code-Liste eindeutig. **Diese Eigenschaft ist ERFORDERLICH**.
 
 **`canonicalVersionUri`**
 
-:   Ein JSON-String im Format `uri`. Diese URI identifiziert eine bestimmte Version der referenzierten Code-Liste. **Diese Eigenschaft ist ERFORDERLICH**.
+:   Ein JSON-String im Format `uri`. Diese URI identifiziert eine bestimmte Version der referenzierten Code-Liste. 
 
 **`locationUrls`**
 
@@ -878,11 +878,11 @@ Das `documentRef`-Objekt definiert einen Verweis auf ein externes OpenCodeList-D
 
 **`canonicalUri`**
 
-:   Ein JSON-String im Format `uri`. Diese URI identifiziert alle Versionen (zusammen) des referenzierten Dokumentes eindeutig. 
+:   Ein JSON-String im Format `uri`. Diese URI identifiziert alle Versionen (zusammen) des referenzierten Dokumentes eindeutig. **Diese Eigenschaft ist ERFORDERLICH**.
 
 **`canonicalVersionUri`**
 
-:   Ein JSON-String im Format `uri`. Diese URI identifiziert eine bestimmte Version der referenzierten Dokumentes. **Diese Eigenschaft ist ERFORDERLICH**.
+:   Ein JSON-String im Format `uri`. Diese URI identifiziert eine bestimmte Version der referenzierten Dokumentes.
 
 **`locationUrls`**
 
