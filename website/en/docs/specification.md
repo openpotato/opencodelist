@@ -1,6 +1,6 @@
 # OpenCodeList Specification
 
-#### Version 0.2.0
+#### Version 0.3.0
 
 The key words "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and "REQUIRED" in this document are to be interpreted as described in [RFC2119 and RFC8174](https://tools.ietf.org/html/bcp14), when, and only when, they appear in all capitals, as shown here.
 
@@ -8,7 +8,7 @@ This specification is licensed under the [Apache License, Version 2.0](https://o
 
 ## Introduction
 
-OpenCodeList defines a generic standard data format for representing code lists. Based on the [JSON Standard](https://datatracker.ietf.org/doc/html/rfc8259), this format can be easily generated and read by almost any programming language. Documents in the OpenCodeList format can be validated for syntactic correctness using the [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.2/schema.json).
+OpenCodeList defines a generic standard data format for representing code lists. Based on the [JSON Standard](https://datatracker.ietf.org/doc/html/rfc8259), this format can be easily generated and read by almost any programming language. Documents in the OpenCodeList format can be validated for syntactic correctness using the [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.3/schema.json).
 
 OpenCodeList can be used for exchanging code lists between services or applications, as a representation format for official code lists, or as a response format for API requests (e.g., for RESTful web services).
 
@@ -137,21 +137,21 @@ Of course, XML is a great, standardised format that leaves hardly anything to be
 
 ### OpenCodeList Document
 
-An OpenCodeList document is a self-contained resource that defines and describes either a code list or a collection of code lists. It MUST contain at least the `opencodelist` field and either `codeList` or `codeListSet`, but not both. An OpenCodeList document uses and conforms to the OpenCodeList specification.
+An OpenCodeList document is a self-contained resource that defines and describes either a code list or a set of code lists. It MUST contain at least the `opencodelist` field and either `codeList` or `codeListSet`, but not both. An OpenCodeList document uses and conforms to the OpenCodeList specification.
 
 ### Code List
 
 A code list is a classic relational table with columns and data rows, where at least one column should serve as the key (code). OpenCodeList allows for defining generic code lists.
 
-### Code List Collection
+### Code List Set
 
-A code list collection is a list of references to external code lists. A code list collection can be used to group different versions of a code list.
+A code list set is a list of references to external code lists. A code list set can be used to group different versions of a code list.
 
 ## Specification
 
 ### Versioning
 
-The OpenCodeList specification is versioned according to the `major.minor.patch` scheme. The major-minor part of the version number (e.g., `0.2`) MUST indicate the functional set of the specification. Patch versions address errors in this document or provide clarifications to this document, not to the functionality. Tools that support OpenCodeList version `0.2` MUST be compatible with all `0.2.*` versions of OpenCodeList. The patch version SHOULD NOT be considered by the tools, so that no distinction is made between `0.2.0` and `0.2.1`.
+The OpenCodeList specification is versioned according to the `major.minor.patch` scheme. The major-minor part of the version number (e.g., `0.3`) MUST indicate the functional set of the specification. Patch versions address errors in this document or provide clarifications to this document, not to the functionality. Tools that support OpenCodeList version `0.3` MUST be compatible with all `0.3.*` versions of OpenCodeList. The patch version SHOULD NOT be considered by the tools, so that no distinction is made between `0.3.0` and `0.3.1`.
 
 An OpenCodeList document always contains a mandatory `opencodelist` field that specifies the version of the OpenCodeList specification being used.
 
@@ -163,7 +163,7 @@ All field names in the specification are case-sensitive. The schema defines two 
 
 #### JSON Schema
 
-[JSON Schema](https://json-schema.org/) is a specification for defining JSON data structures. A JSON schema itself is expressed declaratively using [JSON](https://www.json.org/). The [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.2/schema.json) is a JSON schema for OpenCodeList documents.
+[JSON Schema](https://json-schema.org/) is a specification for defining JSON data structures. A JSON schema itself is expressed declaratively using [JSON](https://www.json.org/). The [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.3/schema.json) is a JSON schema for OpenCodeList documents.
 
 #### Multilingual Support
 

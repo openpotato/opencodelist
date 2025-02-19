@@ -1,6 +1,6 @@
 # OpenCodeList-Spezifikation
 
-#### Version 0.2.0
+#### Version 0.3.0
 
 Die Schlüsselwörter "MUSS/MÜSSEN/DARF/DÜRFEN" (*Englisch: "MUST"*), "MUSS/MÜSSEN/DARF/DÜRFEN NICHT" (*Englisch: "MUST NOT"*), "SOLLTE/SOLLTEN" (*Englisch: "SHOULD"*), "SOLLTE/SOLLTEN NICHT" (*Englisch: "SHOULD NOT"*), "KANN/KÖNNEN" (*Englisch: "MAY"*) und "ERFORDERLICH" (*Englisch: "REQUIRED"*) in diesem Dokument sind so zu interpretieren, wie sie in ihrer englischen Übersetzung in [RFC2119 und RFC8174](https://tools.ietf.org/html/bcp14) spezifiziert sind, und nur dann, wenn sie, wie hier, in Großbuchstaben geschrieben sind.
 
@@ -8,7 +8,7 @@ Dieses Spezifikation ist lizenziert unter der [Apache License, Version 2.0](http
 
 ## Einführung
 
-OpenCodeList definiert ein generisches Standard-Datenformat zur Repräsentation von Code-Listen bzw. Schlüsselverzeichnissen. Basierend auf dem [JSON-Standard](https://datatracker.ietf.org/doc/html/rfc8259) kann dieses Format mit nahezu jeder Programmiersprache leicht erzeugt und gelesen werden. Mit Hilfe des [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.2/schema.json) können Dokumente im OpenCodeList-Format auf ihre syntaktische Korrektheit hin validiert werden.
+OpenCodeList definiert ein generisches Standard-Datenformat zur Repräsentation von Code-Listen bzw. Schlüsselverzeichnissen. Basierend auf dem [JSON-Standard](https://datatracker.ietf.org/doc/html/rfc8259) kann dieses Format mit nahezu jeder Programmiersprache leicht erzeugt und gelesen werden. Mit Hilfe des [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.3/schema.json) können Dokumente im OpenCodeList-Format auf ihre syntaktische Korrektheit hin validiert werden.
 
 OpenCodeList kann zum Austausch von Code-Listen zwischen Diensten oder Anwendungen genutzt werden, als Repräsentationsformat für ofizielle Code-Listen oder als Antwortformat für API-Anfragen (z.B. für RESTful Web-Services).
 
@@ -165,7 +165,7 @@ Ein OpenCodeList-Dokument mit gesetzter Eigenschaft `codeListSet`, aber ohne Ver
 
 ### Versionierung
 
-Die OpenCodeList-Spezifikation wird nach dem Schema `major.minor.patch` versioniert. Der Major-Minor-Teil der Versionsnummer (z. B. `0.2`) MUSS den Funktionssatz der Spezifikation bezeichnen. Die Patch-Versionen betreffen Fehler in diesem Dokument oder stellen Klarstellungen zu diesem Dokument bereit, nicht zum Funktionsumfang. Werkzeuge, die OpenCodeList in der Version `0.2` unterstützen, MÜSSEN mit allen `0.2.*` Versionen von OpenCodeList kompatibel sein. Die Patch-Version SOLLTE von den Werkzeugen NICHT berücksichtigt werden, so dass zum Beispiel kein Unterschied zwischen `0.2.0` und `0.2.1` gemacht wird.
+Die OpenCodeList-Spezifikation wird nach dem Schema `major.minor.patch` versioniert. Der Major-Minor-Teil der Versionsnummer (z. B. `0.3`) MUSS den Funktionssatz der Spezifikation bezeichnen. Die Patch-Versionen betreffen Fehler in diesem Dokument oder stellen Klarstellungen zu diesem Dokument bereit, nicht zum Funktionsumfang. Werkzeuge, die OpenCodeList in der Version `0.3` unterstützen, MÜSSEN mit allen `0.3.*` Versionen von OpenCodeList kompatibel sein. Die Patch-Version SOLLTE von den Werkzeugen NICHT berücksichtigt werden, so dass zum Beispiel kein Unterschied zwischen `0.3.0` und `0.3.1` gemacht wird.
 
 Ein OpenCodeList-Dokument enthält stets ein obligatorisches Eigenschaft `opencodelist`, das die verwendete Version der OpenCodeList-Spezifikation angibt.
 
@@ -177,7 +177,7 @@ Bei allen Namen von Eigenschaften in der Spezifikation wird zwischen Groß- und 
 
 #### JSON Schema
 
-[JSON Schema](https://json-schema.org/) ist eine Spezifikation zur Definition von JSON-Datenstrukturen. Ein JSON-Schema wird selbst deklarativ durch [JSON](https://www.json.org/) ausgedrückt. Das [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.2/schema.json) ist ein JSON-Schema für OpenCodeList-Dokumente.
+[JSON Schema](https://json-schema.org/) ist eine Spezifikation zur Definition von JSON-Datenstrukturen. Ein JSON-Schema wird selbst deklarativ durch [JSON](https://www.json.org/) ausgedrückt. Das [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.3/schema.json) ist ein JSON-Schema für OpenCodeList-Dokumente.
 
 #### Mehrsprachigkeit
 
