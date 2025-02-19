@@ -398,7 +398,7 @@ The `identification` object contains metadata about an OpenCodeList document:
 
 **`canonicalUri`**
 
-:   A JSON string in `uri` format. This URI uniquely identifies all versions (collectively) of this document.
+:   A JSON string in `uri` format. This URI uniquely identifies all versions (collectively) of this document. **This property is REQUIRED**.
 
 **`canonicalVersionUri`**
 
@@ -772,11 +772,11 @@ The `codeListRef` object defines a reference to an external CodeList document:
 
 **`canonicalUri`**
 
-:   A JSON string in `uri` format. This URI uniquely identifies all versions (collectively) of the referenced code list.
+:   A JSON string in `uri` format. This URI uniquely identifies all versions (collectively) of the referenced code list. **This property is REQUIRED**.
 
 **`canonicalVersionUri`**
 
-:   A JSON string in `uri` format. This URI uniquely identifies a specific version of the referenced code list. **This property is REQUIRED**.
+:   A JSON string in `uri` format. This URI uniquely identifies a specific version of the referenced code list. 
 
 **`locationUrls`**
 
@@ -862,11 +862,11 @@ The `documentRef` object defines a reference to an external OpenCodeList documen
 
 **`canonicalUri`**
 
-:   A JSON string in `uri` format. This URI uniquely identifies all versions (collectively) of the referenced document.
+:   A JSON string in `uri` format. This URI uniquely identifies all versions (collectively) of the referenced document. **This property is REQUIRED**.
 
 **`canonicalVersionUri`**
 
-:   A JSON string in `uri` format. This URI uniquely identifies a specific version of the referenced document. **This property is REQUIRED**.
+:   A JSON string in `uri` format. This URI uniquely identifies a specific version of the referenced document.
 
 **`locationUrls`**
 
