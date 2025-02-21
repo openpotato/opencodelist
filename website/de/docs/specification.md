@@ -181,7 +181,7 @@ Bei allen Namen von Eigenschaften in der Spezifikation wird zwischen Groß- und 
 
 #### Mehrsprachigkeit
 
-OpenCodeList unterstützt Mehrsprachigkeit, d.h. Textspalten in einer Code-Liste können optional mit einem [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) versehen werden.   
+OpenCodeList unterstützt Mehrsprachigkeit, d.h. Textspalten in einer Code-Liste können optional mit einem [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) versehen werden.   
 
 Beispiel:
 
@@ -350,7 +350,7 @@ Das `markup`-Objekt ist ein in einer Auszeichnungssprache (z.B. Markdown) format
 
 **`language`**
 
-:   Ein JSON-String mit der Sprache des Textblocks. Dies MUSS ein [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) sein.
+:   Ein JSON-String mit der Sprache des Textblocks. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
 
 **`format`**
 
@@ -370,7 +370,7 @@ Das `identification`-Objekt enthält Metainformationen zu einem OpenCodeList-Dok
 
 **`language`**
 
-:   Ein JSON-String mit der Sprache dieses Dokuments. Dies MUSS ein [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) sein.
+:   Ein JSON-String mit der Sprache dieses Dokuments. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
 
 **`shortName`**
 
@@ -483,7 +483,7 @@ Das `localizedUri`-Objekt definiert eine Referenz auf eine lokalisierte Ressourc
 
 **`language`**
 
-:   Ein JSON-String mit der Sprache der referenzierten Ressource. Dies MUSS ein [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) sein. **Diese Eigenschaft ist ERFORDERLICH**.
+:   Ein JSON-String mit der Sprache der referenzierten Ressource. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein. **Diese Eigenschaft ist ERFORDERLICH**.
 
 **`url`**
 
@@ -597,21 +597,21 @@ Ein JSON-String. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügba
 + **`minLength`** : Eine JSON-Nummer im Format `integer` mit der minimalen zulässigen Anzahl an Zeichen
 + **`maxLength`** : Eine JSON-Nummer im Format `integer` mit der maximalen zulässigen Anzahl an Zeichen
 + **`pattern`** : Eine JSON-String mit einem regulären Ausdruck, der stets zu den Werten in dieser Spalte passen muss. Der verwendete Syntax für reguläre Ausdrücke entspricht dem Syntax aus JavaScript ([ECMAScript 2024 language specification](https://ecma-international.org/publications-and-standards/standards/ecma-262/)), so wie er in [JSON SChmewa](https://json-schema.org/understanding-json-schema/reference/regular_expressions) beschrieben und genutzt wird.
-+ **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) sein.
++ **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
 
 ##### enum
 
 Einen JSON-String, der ein Aufzählung repräsentiert. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
 + **`members`** : Definiert die möglichen Werte der Aufzählung. Es MUSS ein JSON-Array mit [`enumMember`](#enummember-objekt)-Objekten sein. **Diese Eigenschaft ist ERFORDERLICH**.
-+ **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) sein.
++ **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
 
 ##### enum-set
 
 Einen JSON-Array, der eine Aufzählungmenge repräsentiert. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
 + **`members`** : Definiert die möglichen Werte der Aufzählungmenge. Es MUSS ein JSON-Array mit [`enumMember`](#enummember-objekt)-Objekten sein. **Diese Eigenschaft ist ERFORDERLICH**.
-+ **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) sein.
++ **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
 
 ##### integer
 

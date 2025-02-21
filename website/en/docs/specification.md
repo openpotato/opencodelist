@@ -167,7 +167,7 @@ All field names in the specification are case-sensitive. The schema defines two 
 
 #### Multilingual Support
 
-OpenCodeList supports multilingualism, i.e. text columns in a code list can optionally be provided with an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).   
+OpenCodeList supports multilingualism, i.e. text columns in a code list can optionally be provided with an [IETF BCP 47 language tag](https://datatracker.ietf.org/doc/html/rfc5646).   
 
 Example:
 
@@ -334,7 +334,7 @@ The `markup` object is a text block formatted in a markup language (e.g., Markdo
 
 **`language`**
 
-:   A JSON string specifying the language of the text block. This MUST be an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+:   A JSON string specifying the language of the text block. This MUST be an [IETF BCP 47 language tag](https://datatracker.ietf.org/doc/html/rfc5646).
 
 **`format`**
 
@@ -354,7 +354,7 @@ The `identification` object contains metadata about an OpenCodeList document:
 
 **`language`**
 
-:   A JSON string specifying the language of this document. This MUST be an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+:   A JSON string specifying the language of this document. This MUST be an [IETF BCP 47 language tag](https://datatracker.ietf.org/doc/html/rfc5646).
 
 **`shortName`**
 
@@ -467,7 +467,7 @@ The `localizedUri` object defines a reference to a localised resource:
 
 **`language`**
 
-:   A JSON string with the language of the referenced resource. This MUST be an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt). **This property is REQUIRED**.
+:   A JSON string with the language of the referenced resource. This MUST be an [IETF BCP 47 language tag](https://datatracker.ietf.org/doc/html/rfc5646). **This property is REQUIRED**.
 
 **`url`**
 
@@ -581,21 +581,21 @@ A JSON string. The following additional schema properties are available:
 + **`minLength`**: A JSON number in the `integer` format, specifying the minimum allowable number of characters.
 + **`maxLength`**: A JSON number in the `integer` format, specifying the maximum allowable number of characters.
 + **`pattern`**: A JSON string with a regular expression that must always match the values in this column. The regular expression syntax follows JavaScript ([ECMAScript 2024 specification](https://ecma-international.org/publications-and-standards/standards/ecma-262/)) and is used in [JSON Schema](https://json-schema.org/understanding-json-schema/reference/regular_expressions).
-+ **`language`**: A JSON string indicating the language of the contents in this column. This MUST be an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
++ **`language`**: A JSON string indicating the language of the contents in this column. This MUST be an [IETF BCP 47 language tag](https://datatracker.ietf.org/doc/html/rfc5646).
 
 ##### enum
 
 A JSON string representing an enumeration. The following additional schema properties are available:
 
 + **`members`**: Defines the possible values of the enumeration. It MUST be a JSON array of `enumMember` objects. **This field is REQUIRED**.
-+ **`language`**: A JSON string indicating the language of the contents in this column. This MUST be an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
++ **`language`**: A JSON string indicating the language of the contents in this column. This MUST be an [IETF BCP 47 language tag](https://datatracker.ietf.org/doc/html/rfc5646).
 
 ##### enum-set
 
 A JSON array representing an enumeration set. The following additional schema properties are available:
 
 + **`members`**: Defines the possible values of the enumeration. It MUST be a JSON array of `enumMember` objects. **This field is REQUIRED**.
-+ **`language`**: A JSON string indicating the language of the contents in this column. This MUST be an [IETF BCP 47 language tag](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
++ **`language`**: A JSON string indicating the language of the contents in this column. This MUST be an [IETF BCP 47 language tag](https://datatracker.ietf.org/doc/html/rfc5646).
 
 ##### integer
 
