@@ -230,33 +230,44 @@ Die Formatierung der Datums- und Zeitangaben in OpenCodeList sind, wie von [JSON
 
 Beispiele:
 
-+ **`date-time`** : Datum und Zeit zusammen, z.B. `2024-11-13T20:20:39` oder `2024-11-13T20:20:39+00:00`.
-+ **`time`** : Nur Uhrzeit, z.B. `20:20:39` oder `20:20:39+00:00`.
++ **`date-time`** : Datum und Zeit zusammen, z.B. `2024-11-13T20:20:39Z` oder `2024-11-13T20:20:39+00:00`.
++ **`time`** : Nur Uhrzeit, z.B. `20:20:39`.
 + **`date`** : Nur Datum, z.B. `2024-11-13`.
 
 #### URIs
 
-Wird ein [Uniform Resource Identifier (URI)](https://tools.ietf.org/html/rfc3986) verlangt, muss je nach Kontext zwischen zwei JSON-String-Formaten unterscheiden werden:
+Eine [URI (Uniform Resource Identifier)](https://datatracker.ietf.org/doc/html/rfc3986) ist eine Zeichenkette, die verwendet wird, um eine Ressource im Internet zu identifizieren. Es handelt sich hierbei um einen umfassenden Begriff, der sowohl URLs als auch URNs einschließt. Es gibt zwei Haupttypen von URIs:
 
-+ Das Format `uri` erwartet, dass der JSON-String ein absoluter URI (Uniform Resource Identifier) ist. Ein absoluter URI enthält alle notwendigen Informationen, um die Ressource unabhängig von ihrem Kontext zu identifizieren. Das bedeutet, dass ein `uri`
++ *URL (Uniform Resource Locator)*: Gibt den Standort einer Ressource an.
++ *URN (Uniform Resource Name)*: Gibt den Namen einer Ressource an, ohne ihren Standort zu implizieren.
 
-    + mit einem Schemas (wie http, https, etc.) beginnt,
-    + einen Hostnamen oder eine IP-Adresse enthalten kann,
-    + und optional einen Pfad, eine Abfrage und ein Fragment enthalten kann.
+Eine **URL (Uniform Resource Locator)** ist ein URI-Typ, der beschreibt, wie eine Ressource im Netzwerk gefunden werden kann. Sie enthält Informationen wie das zu verwendende Protokoll (z.B. HTTPS), den Hostnamen (z.B. www.beispiel.de) und manchmal einen Pfad oder eine Abfragezeichenfolge, um die spezifische Ressource zu identifizieren.
 
-+ Das Format `uri-reference` ist flexibler und erlaubt sowohl absolute als auch relative URIs. `uri-reference` kann also eine vollständige URI wie oben beschrieben sein, oder es kann ein relativer Verweis sein, der in einem bestimmten Kontext interpretiert werden muss. Ein relativer URI könnte beispielsweise nur einen Pfad oder sogar nur ein Fragment enthalten.
+Beispiel für eine URL:
 
-Beispiele:
+```
+https://www.beispiel.de/buecher/die-abenteuer-des-tom-sawyer.pdf
+```
 
-+ **`uri`** : 
+Hier:
 
-    + `https://example.com/path/to/resource?query=param#fragment`
++ `https` ist das Protokoll.
++ `www.beispiel.de` ist der Hostname.
++ `/buecher/die-abenteuer-des-tom-sawyer.pdf` ist der Pfad zur spezifischen Ressource.
 
-+ **`uri-reference`** : 
+Eine **URN (Uniform Resource Name)** ist ein URI-Typ, der eine eindeutige und dauerhafte Kennung für eine Ressource bereitstellt, ohne ihren Standort oder den Zugriffsweg zu beschreiben. URNs sollen als dauerhafte, standortunabhängige Ressourcenkennung dienen.
 
-    + `https://example.com/path/to/resource?query=param#fragment`
-	+ `/path/to/resource`
-	+ `#fragment`
+Beispiel für eine URN:
+
+```
+urn:isbn:978-3-96111-268-5
+```
+
+Hier:
+
++ `urn` zeigt an, dass es sich um eine URN handelt.
++ `isbn` ist der Namespace-Identifier.
++ `978-3-96111-268-5` ist der spezifische Ressourcename innerhalb des `isbn` Namespace.
 
 ### Schema
 
@@ -442,7 +453,7 @@ Beispiel:
   "shortName": "GermanFederalStateCodes",
   "longName": "ISO 3166-2 Codes for Germany",
   "description": "ISO 3166-2 Codes for the federal states of Germany",
-  "publishedAt": "2017-11-24T12:00:00",
+  "publishedAt": "2017-11-24T12:00:00Z",
   "publisher": {
     "shortName": "ISO",
     "longName": "International Organization for Standardization",

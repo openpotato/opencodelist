@@ -216,33 +216,44 @@ The formatting of dates and times in OpenCodeList, as specified by [JSON Schema]
 
 Examples:
 
-+ **`date-time`**: Date and time together, e.g., `2024-11-13T20:20:39` or `2024-11-13T20:20:39+00:00`.
-+ **`time`**: Time only, e.g., `20:20:39` or `20:20:39+00:00`.
++ **`date-time`**: Date and time together, e.g., `2024-11-13T20:20:39Z` or `2024-11-13T20:20:39+00:00`.
++ **`time`**: Time only, e.g., `20:20:39`.
 + **`date`**: Date only, e.g., `2024-11-13`.
 
 #### URIs
 
-When a [Uniform Resource Identifier (URI)](https://tools.ietf.org/html/rfc3986) is required, it is important to distinguish between two JSON string formats depending on the context:
+A [URI (Uniform Resource Identifier)](https://datatracker.ietf.org/doc/html/rfc3986) is a string of characters used to identify a resource on the internet. It is a broad term that encompasses both URLs and URNs. There are two main types of URIs:
 
-+ The `uri` format expects the JSON string to be an absolute URI. An absolute URI contains all the necessary information to identify the resource independently of its context. This means a `uri`:
-    
-    + begins with a scheme (like http, https, etc.),
-    + may contain a hostname or an IP address,
-    + and may optionally include a path, a query, and a fragment.
++ *URL (Uniform Resource Locator)*: Specifies the location of a resource.
++ *URN (Uniform Resource Name)*: Specifies the name of a resource without implying its location.
 
-+ The `uri-reference` format is more flexible and allows both absolute and relative URIs. `uri-reference` can be a complete URI as described above, or it can be a relative reference that needs to be interpreted in a specific context. A relative URI might include only a path or even just a fragment.
+A **URL (Uniform Resource Locator)** is a type of URI that describes how a resource can be located on a network. It includes information such as the protocol to be used (e.g. HTTPS), the hostname (e.g. www.example.eu), and sometimes a path or query string to identify the specific resource.
 
-Examples:
+Example of a URL:
 
-+ **`uri`**:
+```
+https://www.example.eu/books/the-adventures-of-tom-sawyer.pdf
+```
 
-    + `https://example.com/path/to/resource?query=param#fragment`
+Here:
 
-+ **`uri-reference`**:
++ `https` is the protocol.
++ `www.example.eu` is the hostname.
++ `/books/the-adventures-of-tom-sawyer.pdf` is the path to the specific resource.
 
-    + `https://example.com/path/to/resource?query=param#fragment`
-    + `/path/to/resource`
-    + `#fragment`
+A **URN (Uniform Resource Name)** is a type of URI that provides a unique and persistent identifier for a resource without describing its location or method of access. URNs are intended to serve as long-lasting, location-independent resource identifiers.
+
+Example of a URN:
+
+```
+urn:isbn:9780753406014
+```
+
+Here:
+
++ `urn` indicates that this is a URN.
++ `isbn` is the namespace identifier.
++ `9780753406014` is the specific resource name within the `isbn` namespace.
   
 ### Schema
 
@@ -426,7 +437,7 @@ Example:
   "shortName": "GermanFederalStateCodes",
   "longName": "ISO 3166-2 Codes for Germany",
   "description": "ISO 3166-2 Codes for the federal states of Germany",
-  "publishedAt": "2017-11-24T12:00:00",
+  "publishedAt": "2017-11-24T12:00:00Z",
   "publisher": {
     "shortName": "ISO",
     "longName": "International Organization for Standardization",
