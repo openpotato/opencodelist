@@ -6,7 +6,7 @@
 
 **Changed:**
 
-+ Breaking change: The `CanonicalVersionUri` property was marked as required for the `Identification` sub-schema.	
++ Breaking change: The `canonicalVersionUri` property was marked as required for the `identification` sub-schema.	
 + Breaking change: For the sub-schemas `documentRef` and `keyRef`, the required property `canonicalVersionUri` has been changed to `canonicalUri`.
 
 ### 0.2.0 <small>_ January 25, 2025</small>
