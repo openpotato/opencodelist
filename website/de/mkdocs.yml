@@ -6,7 +6,7 @@ site_url: 'https://openpotato.github.io/opencodelist'
 
 # Copyright
 copyright:
-  '&copy; 2025 STÜBER SYSTEMS GmbH : <a href="https://legal.stueber.de/imprint.php">Imprint</a> : <a href="https://legal.stueber.de/privacy.php">Privacy</a>'
+  '&copy; 2026 STÜBER SYSTEMS GmbH : <a href="https://legal.stueber.de/imprint.php">Imprint</a> : <a href="https://legal.stueber.de/privacy.php">Privacy</a>'
 
 # Repository
 repo_name: 'Auf GitHub'
@@ -95,5 +95,6 @@ nav:
   - Einführung: index.md
   - Spezifikation: specification.md
   - Bibliotheken: libraries.md
+  - Werkzeuge: tools.md
   - Community: community.md
   - Änderungslog: change-log.md

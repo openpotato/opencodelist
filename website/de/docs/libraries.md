@@ -1,8 +1,12 @@
-Die folgenden Bibliotheken sind verfügbar, um OpenCodeList-Dokumente zu parsen oder zu erzeugen:
+Die folgenden Code-Bibliotheken sind verfügbar, um OpenCodeList-Dokumente zu parsen oder zu erzeugen:
 
 ## .NET
 
 - [openpotato/opencodelist.net](https://github.com/openpotato/opencodelist.net): Offizielle OpenCodeList [.NET](https://dotnet.microsoft.com/)-Bibliothek.
+
+## TypeScript
+
+- [openpotato/opencodelist.ts](https://github.com/openpotato/opencodelist.ts): Offizielle OpenCodeList [TypeScript](https://www.typescriptlang.org/)-Bibliothek.
 
 ## Delphi
 
