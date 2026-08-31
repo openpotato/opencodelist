@@ -1,16 +1,16 @@
 # OpenCodeList-Spezifikation
 
-#### Version 0.3.0
+#### Version 0.4.0
 
-Die Schlüsselwörter "MUSS/MÜSSEN/DARF/DÜRFEN" (*Englisch: "MUST"*), "MUSS/MÜSSEN/DARF/DÜRFEN NICHT" (*Englisch: "MUST NOT"*), "SOLLTE/SOLLTEN" (*Englisch: "SHOULD"*), "SOLLTE/SOLLTEN NICHT" (*Englisch: "SHOULD NOT"*), "KANN/KÖNNEN" (*Englisch: "MAY"*) und "ERFORDERLICH" (*Englisch: "REQUIRED"*) in diesem Dokument sind so zu interpretieren, wie sie in ihrer englischen Übersetzung in [RFC2119 und RFC8174](https://tools.ietf.org/html/bcp14) spezifiziert sind, und nur dann, wenn sie, wie hier, in Großbuchstaben geschrieben sind.
+Die Schlüsselwörter "MUSS/MÜSSEN" (englisch: **MUST**), "DARF/DÜRFEN NICHT" (englisch: **MUST NOT**), "SOLLTE/SOLLTEN" (englisch: **SHOULD**), "SOLLTE/SOLLTEN NICHT" (englisch: **SHOULD NOT**), "DARF/DÜRFEN" bzw. "KANN/KÖNNEN" (englisch: **MAY**) und "ERFORDERLICH" (englisch: **REQUIRED**) in diesem Dokument sind so zu interpretieren, wie sie in ihrer englischen Übersetzung in [RFC2119 und RFC8174](https://tools.ietf.org/html/bcp14) spezifiziert sind, und nur dann, wenn sie, wie hier, in Großbuchstaben geschrieben sind.
 
-Dieses Spezifikation ist lizenziert unter der [Apache License, Version 2.0](https://opensource.org/license/apache-2-0/).
+Diese Spezifikation ist lizenziert unter der [Apache License, Version 2.0](https://opensource.org/license/apache-2-0/).
 
 ## Einführung
 
-OpenCodeList definiert ein generisches Standard-Datenformat zur Repräsentation von Code-Listen bzw. Schlüsselverzeichnissen. Basierend auf dem [JSON-Standard](https://datatracker.ietf.org/doc/html/rfc8259) kann dieses Format mit nahezu jeder Programmiersprache leicht erzeugt und gelesen werden. Mit Hilfe des [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.3/schema.json) können Dokumente im OpenCodeList-Format auf ihre syntaktische Korrektheit hin validiert werden.
+OpenCodeList definiert ein generisches Standard-Datenformat zur Repräsentation von Code-Listen bzw. Schlüsselverzeichnissen. Basierend auf dem [JSON-Standard](https://datatracker.ietf.org/doc/html/rfc8259) kann dieses Format mit nahezu jeder Programmiersprache leicht erzeugt und gelesen werden. Mit Hilfe des [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.4/schema.json) können Dokumente im OpenCodeList-Format auf ihre syntaktische Korrektheit hin validiert werden.
 
-OpenCodeList kann zum Austausch von Code-Listen zwischen Diensten oder Anwendungen genutzt werden, als Repräsentationsformat für ofizielle Code-Listen oder als Antwortformat für API-Anfragen (z.B. für RESTful Web-Services).
+OpenCodeList kann zum Austausch von Code-Listen zwischen Diensten oder Anwendungen genutzt werden, als Repräsentationsformat für offizielle Code-Listen oder als Antwortformat für API-Anfragen (z.B. für RESTful Web-Services).
 
 ### Was sind Code-Listen?
 
@@ -129,7 +129,7 @@ Wer also Code-Listen im XML-Format repräsentieren möchte, dem sei der OASIS-St
 
 Selbstverständlich ist XML ein tolles, standardisiertes Format, das kaum Wünsche offen lässt. Der Grund für eine JSON-Darstellung von Code-Listen liegt jedoch in dem ausdrücklichen Wunsch, JSON zu verwenden:
 
-+ In der Welt cloud-basierter Dienste hat sich JSON als Payload (zu Deutsch: Nutzdaten) für RESTful-APIs weitestgehend durchgesetzt. Natürlich kann eine solche API auch XML als Payload zurückliefern, generiert damit aber eine zusätzliche Abhängigkeit, sowohl auf Serverseite (Generieren von XML) als auch auf Clientseite (Konsumieren von XML). Statt mit einem Format (JSON) muss beim Einsatz von Code-Listen mit einem zusätzlichen Format (XML) hantiert werden. Das erhöht den Aufwand.
++ In der Welt Cloud-basierter Dienste hat sich JSON als Payload (zu Deutsch: Nutzdaten) für RESTful-APIs weitestgehend durchgesetzt. Natürlich kann eine solche API auch XML als Payload zurückliefern, generiert damit aber eine zusätzliche Abhängigkeit, sowohl auf Serverseite (Generieren von XML) als auch auf Clientseite (Konsumieren von XML). Statt mit einem Format (JSON) muss beim Einsatz von Code-Listen mit einem zusätzlichen Format (XML) hantiert werden. Das erhöht den Aufwand.
 
 + JSON ist kompakter, da der Syntax weniger wortreich daherkommt. Bei umfangreichen Code-Listen wirkt sich das positiv auf die Performanz aus. Im Allgemeinen ist JSON schneller zu parsen als XML, da es weniger syntaktischen Ballast mit sich bringt und die JSON-Parser in den meisten modernen Programmiersprachen inzwischen stark optimiert sind.
 
@@ -137,7 +137,7 @@ Selbstverständlich ist XML ein tolles, standardisiertes Format, das kaum Wünsc
 
 ### OpenCodeList-Dokument
 
-Ein OpenCodeList-Dokument ist eine in sich geschlossene Ressource, die entweder eine Code-Liste oder eine Code-Listensammlung definiert und beschreibt. Es MÜSSEN mindestens die Eigenschaften `opencodelist` sowie im gegenseitigen Ausschluss `codeList` oder `codeListSet` enthalten sein. Ein OpenCodeList-Dokument verwendet die OpenCodeList-Spezifikation und ist mit ihr konform.
+Ein OpenCodeList-Dokument ist eine in sich geschlossene Ressource, die entweder eine Code-Liste oder eine Code-Listensammlung definiert und beschreibt. Es MUSS die Eigenschaft `$opencodelist` sowie genau eine der beiden Eigenschaften `codeList` oder `codeListSet` enthalten. Ein OpenCodeList-Dokument verwendet die OpenCodeList-Spezifikation und ist mit ihr konform.
 
 ### Code-Listen
 
@@ -153,7 +153,7 @@ Eine Code-Listensammlung ist eine Liste von Verweisen auf externe Code-Listen od
 
 + Zusammenfassen unterschiedlicher Versionen einer Code-Liste in einer Sammlung.
 
-+ Erstellung einer Hierachie von Code-Listensammlungen.
++ Erstellung einer Hierarchie von Code-Listensammlungen.
 
 + Erstellung eines Indexes aller nutzbaren Code-Listen.
 
@@ -165,9 +165,9 @@ Ein OpenCodeList-Dokument mit gesetzter Eigenschaft `codeListSet`, aber ohne Ver
 
 ### Versionierung
 
-Die OpenCodeList-Spezifikation wird nach dem Schema `major.minor.patch` versioniert. Der Major-Minor-Teil der Versionsnummer (z. B. `0.3`) MUSS den Funktionssatz der Spezifikation bezeichnen. Die Patch-Versionen betreffen Fehler in diesem Dokument oder stellen Klarstellungen zu diesem Dokument bereit, nicht zum Funktionsumfang. Werkzeuge, die OpenCodeList in der Version `0.3` unterstützen, MÜSSEN mit allen `0.3.*` Versionen von OpenCodeList kompatibel sein. Die Patch-Version SOLLTE von den Werkzeugen NICHT berücksichtigt werden, so dass zum Beispiel kein Unterschied zwischen `0.3.0` und `0.3.1` gemacht wird.
+Die OpenCodeList-Spezifikation wird nach dem Schema `major.minor.patch` versioniert. Der Major-Minor-Teil der Versionsnummer (z. B. `0.4`) MUSS den Funktionssatz der Spezifikation bezeichnen. Die Patch-Versionen betreffen Fehler in diesem Dokument oder stellen Klarstellungen zu diesem Dokument bereit, nicht zum Funktionsumfang. Werkzeuge, die OpenCodeList in der Version `0.4` unterstützen, MÜSSEN mit allen `0.4.*` Versionen von OpenCodeList kompatibel sein. Die Patch-Version SOLLTE von den Werkzeugen NICHT berücksichtigt werden, so dass zum Beispiel kein Unterschied zwischen `0.4.0` und `0.4.1` gemacht wird.
 
-Ein OpenCodeList-Dokument enthält stets ein obligatorisches Eigenschaft `opencodelist`, das die verwendete Version der OpenCodeList-Spezifikation angibt.
+Ein OpenCodeList-Dokument enthält stets eine obligatorische Eigenschaft `$opencodelist`, das die verwendete Version der OpenCodeList-Spezifikation angibt.
 
 ### Format
 
@@ -177,11 +177,15 @@ Bei allen Namen von Eigenschaften in der Spezifikation wird zwischen Groß- und 
 
 #### JSON Schema
 
-[JSON Schema](https://json-schema.org/) ist eine Spezifikation zur Definition von JSON-Datenstrukturen. Ein JSON-Schema wird selbst deklarativ durch [JSON](https://www.json.org/) ausgedrückt. Das [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.3/schema.json) ist ein JSON-Schema für OpenCodeList-Dokumente.
+[JSON Schema](https://json-schema.org/) ist eine Spezifikation zur Definition von JSON-Datenstrukturen. Ein JSON-Schema wird selbst deklarativ durch [JSON](https://www.json.org/) ausgedrückt. Das [OpenCodeList Document Schema](https://github.com/openpotato/opencodelist/tree/main/schemas/v0.4/schema.json) ist ein JSON-Schema für OpenCodeList-Dokumente.
 
 #### Mehrsprachigkeit
 
-OpenCodeList unterstützt Mehrsprachigkeit, d.h. Textspalten in einer Code-Liste können optional mit einem [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) versehen werden.   
+OpenCodeList unterstützt mehrsprachige Inhalte auf mehreren Ebenen. Zur Kennzeichnung von Sprachen werden ausschließlich [IETF-BCP-47-Sprachtags](https://datatracker.ietf.org/doc/html/rfc5646) verwendet.
+
+Die Eigenschaft `identification.language` definiert die Standardsprache für die Inhalte eines OpenCodeList-Dokuments. Diese Sprache gilt, sofern für einen bestimmten Inhalt keine abweichende Sprache angegeben wird.
+
+Spalten vom Typ `string`, `enum` oder `enum-set` können mit der Eigenschaft `language` eine eigene Sprache festlegen. Diese Sprachangabe überschreibt für die Werte dieser Spalte die Standardsprache des Dokuments.
 
 Beispiel:
 
@@ -201,38 +205,107 @@ Beispiel:
     "type": "string",
     "language": "en"
   }
-],
+]
 ```
+
+Die Eigenschaften `name` und `description` von Spalten, Schlüsseln und Fremdschlüsseln sowie die Eigenschaft `description` von Aufzählungswerten können entweder als einfacher JSON-String oder als JSON-Objekt mit sprachabhängigen Werten angegeben werden. Bei einem solchen lokalisierten Objekt MUSS jeder Property-Name ein gültiger BCP-47-Sprachtag sein und jeder zugehörige Property-Wert MUSS ein JSON-String sein.
+
+Beispiel:
+
+```json
+{
+  "id": "col-1",
+  "type": "string",
+  "name": {
+    "de": "Beschreibung",
+    "en": "Description",
+    "fr": "Description"
+  },
+  "description": {
+    "de": "Spalte mit einer lokalisierten Beschreibung.",
+    "en": "Column with a localized description.",
+    "fr": "Colonne avec une description localisée."
+  }
+}
+```
+
+Auch Werte einer Spalte vom Typ `string` KÖNNEN als lokalisierte Werte angegeben werden. In diesem Fall wird der Spaltenwert als JSON-Objekt dargestellt, dessen Property-Namen BCP-47-Sprachtags und dessen Property-Werte die jeweiligen Übersetzungen sind.
+
+Beispiel für einen nicht-lokalisierten Spaltenwert:
+
+```json
+{
+  "code": "DE",
+  "name": "Deutschland"
+}
+```
+
+Beispiel für einen lokalisierten Spaltenwert:
+
+```json
+{
+  "code": "DE",
+  "name": {
+    "de": "Deutschland",
+    "en": "Germany",
+    "fr": "Allemagne"
+  }
+}
+```
+
+Bei einem lokalisierten String-Wert bestimmen die BCP-47-Sprachtags innerhalb des Wertes unmittelbar die Sprache der einzelnen Texte. Eine eventuell für die Spalte oder das Dokument angegebene Standardsprache ist für diese lokalisierten Einzelwerte daher nicht maßgeblich.
+
+Alternativ können sprachlich getrennte Versionen eines gesamten OpenCodeList-Dokuments veröffentlicht werden. Hierzu kann `identification.alternateLanguageLocations` auf entsprechende Dokumente in anderen Sprachen verweisen.
 
 #### Sprachtags
 
-IETF BCP 47 (Best Current Practice 47) ist ein Dokument, das die Regeln und Verfahren zur Erstellung und Nutzung von Sprachkennzeichnungen definiert. Diese Kennzeichnungen werden verwendet, um die Sprache von Inhalten im Internet zu identifizieren. BCP 47 wird von der Internet Engineering Task Force (IETF) verwaltet und besteht aus zwei RFCs (Request for Comments): [RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646) und [RFC 4647](https://datatracker.ietf.org/doc/html/rfc4647).
+[IETF BCP 47 (Best Current Practice 47)](https://www.rfc-editor.org/info/bcp47) definiert die Regeln zur Kennzeichnung natürlicher Sprachen und Sprachvarianten. BCP 47 wird von der Internet Engineering Task Force (IETF) gepflegt und basiert insbesondere auf [RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646), der den Aufbau und die Verwendung von Sprachtags definiert, sowie [RFC 4647](https://datatracker.ietf.org/doc/html/rfc4647), der Verfahren zum Vergleichen und Auswählen von Sprachtags beschreibt.
 
-Sprachtags sind notwendig, um die richtige Lokalisierung und Internationalisierung von Webinhalten und Software zu gewährleisten. Sie ermöglichen es Anwendungen und Diensten, den richtigen Sprachinhalt für Benutzer bereitzustellen und die korrekte Darstellung von sprachspezifischen Daten wie Datumsformaten, Zahlen und Textrichtung zu unterstützen.
+BCP-47-Sprachtags ermöglichen es Anwendungen, die Sprache eines Inhalts eindeutig zu kennzeichnen. Neben der eigentlichen Sprache können dabei beispielsweise auch das verwendete Schriftsystem, eine Region oder eine bestimmte Sprachvariante angegeben werden.
 
-Ein BCP 47-Sprachtag besteht aus einer Reihe von Untertags, die durch Bindestriche getrennt sind. Diese Untertags definieren verschiedene Aspekte der Sprache und ihrer Varianten. Die grundlegendsten Komponenten sind:
+Ein BCP-47-Sprachtag besteht aus einem oder mehreren durch Bindestriche getrennten Subtags. Ein einfacher Sprachtag enthält lediglich die Sprache:
 
-+ **Primärsprachen-Subtag**: Dies ist ein obligatorischer Subtag und besteht aus einem Zwei- oder Drei-Buchstaben-Code, der die Hauptsprache bezeichnet (z.B. `en` für Englisch, `de` für Deutsch).
+```text
+de
+en
+fr
+```
 
-+ **Region-Subtag**: Ein optionaler Subtag, der ein Land oder eine Region spezifiziert (z.B. `US` für die Vereinigten Staaten in `en-US`).
+Weitere Subtags können zusätzliche Informationen spezifizieren:
 
-+ **Skript-Subtag**: Ein optionaler Subtag, der das Schriftsystem angibt (z.B. `Latn` für das lateinische Alphabet in `zh-Latn`).
+* **Primärsprachen-Subtag**: Bezeichnet die Sprache, beispielsweise `de` für Deutsch, `en` für Englisch oder `fr` für Französisch. In der üblichen Verwendung besteht dieser Subtag aus zwei oder drei Buchstaben.
 
-+ **Variante-Subtag**: Ein optionaler Subtag, der Sprachvarianten oder Dialekte beschreibt (z.B. `1901` für die traditionelle deutsche Rechtschreibung in `de-1901`).
+* **Skript-Subtag**: Bezeichnet optional das verwendete Schriftsystem, beispielsweise `Latn` für das lateinische oder `Cyrl` für das kyrillische Schriftsystem. Beispiel: `sr-Latn`.
 
-+ **Extension-Subtag**: Erweiterungen zur Angabe zusätzlicher Informationen.
+* **Region-Subtag**: Bezeichnet optional ein Land oder eine Region, beispielsweise `DE` für Deutschland oder `US` für die Vereinigten Staaten. Beispiele: `de-DE` und `en-US`.
 
-+ **Privatgebrauch-Subtag**: Ein Bereich, der für die private Nutzung reserviert und nicht standardisiert ist.
+* **Varianten-Subtag**: Bezeichnet optional eine bestimmte Variante einer Sprache, beispielsweise `1901` für die traditionelle deutsche Rechtschreibung. Beispiel: `de-1901`.
+
+* **Extension-Subtag**: Ermöglicht die Angabe zusätzlicher, durch eine Erweiterung definierter Informationen.
+
+* **Private-Use-Subtag**: Ermöglicht anwendungsspezifische Sprachkennzeichnungen. Der private Bereich beginnt mit dem Singleton `x`, beispielsweise `de-x-example`.
+
+Subtags können miteinander kombiniert werden. Beispielsweise bezeichnet
+
+```text
+zh-Hans-CN
+```
+
+Chinesisch (`zh`) in vereinfachter chinesischer Schrift (`Hans`) mit regionalem Bezug zu China (`CN`).
 
 #### Datums- und Zeitangaben
 
-Die Formatierung der Datums- und Zeitangaben in OpenCodeList sind, wie von [JSON Schema](https://json-schema.org/understanding-json-schema/reference/string.html#dates-and-times) vorgegeben, durch [RFC 3339, Abschnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6) spezifiziert.
+OpenCodeList unterscheidet zwischen Datumswerten, Datums-/Zeitwerten und lokalen Uhrzeitwerten.
+
+Die Formate `date` und `date-time` entsprechen den gleichnamigen Formaten von [JSON Schema](https://json-schema.org/understanding-json-schema/reference/string.html#dates-and-times) und basieren auf [RFC 3339, Abschnitt 5.6](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
+
+Für den Typ `time` verwendet OpenCodeList dagegen eine lokale Uhrzeit ohne Datum und ohne UTC-Offset. Die Darstellung erfolgt im Format `HH:mm:ss` mit optionalen Sekundenbruchteilen von bis zu sieben Stellen.
 
 Beispiele:
 
-+ **`date-time`** : Datum und Zeit zusammen, z.B. `2024-11-13T20:20:39Z` oder `2024-11-13T20:20:39+00:00`.
-+ **`time`** : Nur Uhrzeit, z.B. `20:20:39`.
-+ **`date`** : Nur Datum, z.B. `2024-11-13`.
++ **`date-time`**: Datum und Uhrzeit mit UTC-Offset, z. B. `2024-11-13T20:20:39Z` oder `2024-11-13T20:20:39+01:00`.
++ **`date`**: Datum ohne Uhrzeit, z. B. `2024-11-13`.
++ **`time`**: Lokale Uhrzeit ohne Datum und UTC-Offset, z. B. `20:20:39` oder `20:20:39.1234567`.
 
 #### URIs
 
@@ -293,17 +366,17 @@ Ein OpenCodeList-Dokument enthält folgende Eigenschaften:
 
 Die Eigenschaften `codeList` und `codeListSet` schließen sich gegenseitig aus. **Eine von beiden Eigenschaften ist ERFORDERLICH**. 
 
-Ist die Eigenschaft `codelist` gesetzt, gilt:
+Ist die Eigenschaft `codeList` gesetzt, gilt:
 
 + Ist die Untereigenschaft `dataSet` ebenfalls gesetzt, handelt es sich um ein CodeList-Dokument. 
 
-+ Anderfalls handelt es sich um ein CodeList-Metadokument.
++ Andernfalls handelt es sich um ein CodeList-Metadokument.
 
-Ist die Eigenschaft `codelistSet` gesetzt, gilt:
+Ist die Eigenschaft `codeListSet` gesetzt, gilt:
 
 + Ist die Untereigenschaft `referenceSet` ebenfalls gesetzt, handelt es sich um ein CodeListSet-Dokument. 
 
-+ Anderfalls handelt es sich um ein CodeListSet-Metadokument.
++ Andernfalls handelt es sich um ein CodeListSet-Metadokument.
 
 #### codeList-Objekt
 
@@ -339,7 +412,7 @@ Das `codeListSet`-Objekt definiert eine Sammlung von Verweisen auf externe OpenC
 
 **`referenceSet`**
 
-:   Eine Liste von Verweisen. Es MUSS ein JSON-Array mit [`documentRef`](#documentref-objekt)-Objekten sein. **Diese Eigenschaft ist ERFORDERLICH**.
+:   Eine Liste von Verweisen. Es MUSS ein JSON-Array mit [`documentRef`](#documentref-objekt)-Objekten sein.
 
 #### annotation-Objekt
 
@@ -347,13 +420,13 @@ Das `annotation`-Objekt ist ein Platz für Anmerkungen jeglicher Art:
 
 **`descriptions`**
 
-:   Ein Liste von ausformulierten Anmerkungen. Es MUSS ein JSON-Array mit [`markup`](#markup-objekt)-Objekten sein. 
+:   Eine Liste von ausformulierten Anmerkungen. Es MUSS ein JSON-Array mit [`markup`](#markup-objekt)-Objekten sein. 
 
 **`appInfo`**
 
 :   Ein JSON-Objekt mit maschinell verarbeitbaren Metadaten. Der Inhalt ist frei wählbar und muss lediglich dem JSON-Syntax genügen.
 
-Eine von beiden Eigenschaften ist **ERFORDERLICH**. 
+Mindestens eine der beiden Eigenschaften ist **ERFORDERLICH**. Beide Eigenschaften DÜRFEN gemeinsam angegeben werden.
 
 #### markup-Objekt
 
@@ -370,6 +443,7 @@ Das `markup`-Objekt ist ein in einer Auszeichnungssprache (z.B. Markdown) format
     + `text`
     + `markdown`
     + `html`
+    + `xml`
 
 **`content`**
 
@@ -381,7 +455,7 @@ Das `identification`-Objekt enthält Metainformationen zu einem OpenCodeList-Dok
 
 **`language`**
 
-:   Ein JSON-String mit der Sprache dieses Dokuments. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
+:   Ein JSON-String mit der Standardsprache für die Inhalte dieses Dokuments. Dies MUSS ein [IETF-BCP-47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein. Die Standardsprache gilt, sofern eine Spalte oder ein lokalisierter Wert keine eigene Sprache angibt.
 
 **`shortName`**
 
@@ -486,7 +560,7 @@ Das `publisher`-Objekt definiert den Herausgeber (Behörde, Institution, Persone
 
 **`url`**
 
-:   Ein JSON-String im Format `uri`. Diese URI ist ein Verweis auf zusätzliche externe Informationen (z.B. eine Webseite) zum des Herausgeber.
+:   Ein JSON-String im Format `uri`. Diese URI ist ein Verweis auf zusätzliche externe Informationen (z.B. eine Webseite) zum Herausgeber.
 
 #### localizedUri-Objekt
 
@@ -558,11 +632,11 @@ Das `columnSet`-Objekt definiert Spalten und eindeutige Schlüssel einer Code-Li
 
 **`foreignKeys`**
 
-:   Definiert interne Referenzen sowie externe Referenzen zu anderen Code-Listen. Es MUSS ein JSON-Array mit [`foreignKey`](#foreignkey-objekt)-Objekten sein.
+:   Definiert Fremdschlüssel, die auf Schlüssel externer Code-Listen verweisen. Es MUSS ein JSON-Array mit [`foreignKey`](#foreignkey-objekt)-Objekten sein.
 
 #### column-Objekt
 
-Das `column`-Objekt definiert eine Spalte für einer Code-Liste:
+Das `column`-Objekt definiert eine Spalte für eine Code-Liste:
 
 **`id`**
 
@@ -570,11 +644,11 @@ Das `column`-Objekt definiert eine Spalte für einer Code-Liste:
 
 **`name`**
 
-:   Ein JSON-String mit dem dem Namen der Spalte. **Diese Eigenschaft ist ERFORDERLICH**.
+:   Der Name der Spalte. Entweder ein JSON-String oder ein Objekt mit lokalisierten Namen. Bei einem lokalisierten Objekt MUSS jeder Property-Name ein gültiger [IETF-BCP-47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein und der zugehörige Property-Wert MUSS ein JSON-String sein. **Diese Eigenschaft ist ERFORDERLICH**.
 
 **`description`**
 
-:   Ein JSON-String mit einer kurzen Beschreibung der Spalte. 
+:   Eine kurze Beschreibung der Spalte. Entweder ein JSON-String oder ein Objekt mit lokalisierten Beschreibungen. Bei einem lokalisierten Objekt MUSS jeder Property-Name ein gültiger [IETF-BCP-47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein und der zugehörige Property-Wert MUSS ein JSON-String sein.
 
 **`type`**
 
@@ -585,43 +659,43 @@ Das `column`-Objekt definiert eine Spalte für einer Code-Liste:
     + `enum-set`
     + `integer`
     + `number`
-    + `bool`
+    + `boolean`
     + `time`
     + `date`
     + `date-time`
-    + `object`
+    + `document`
 
 **`nullable`**
 
-:   Eine JSON-Boolean, der definiert, ob diese Spalte auch JSON-NULLs enthalten darf.
+:   Ein JSON-Boolean-Wert, der angibt, ob diese Spalte auch einen JSON-Null-Wert enthalten darf. Ist `nullable` nicht angegeben, gilt `false`.
 
 **`optional`**
 
-:   Eine JSON-Boolean, der definiert, ob diese Spalte optional ist, sie in einer Datenzeile also auch weggelassen werden kann.
+:   Ein JSON-Boolean-Wert, der angibt, ob diese Spalte in einer Datenzeile fehlen darf. Ist `optional` nicht angegeben, gilt `false`.
 
 Abhängig vom Wert in `type` sind weitere Eigenschaften verfügbar.
 
 ##### string
 
-Ein JSON-String. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
+Ein Text. Der Text kann entweder ein JSON-String oder ein JSON-Objekt mit lokalisierten String-Werten sein. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
 + **`minLength`** : Eine JSON-Nummer im Format `integer` mit der minimalen zulässigen Anzahl an Zeichen
 + **`maxLength`** : Eine JSON-Nummer im Format `integer` mit der maximalen zulässigen Anzahl an Zeichen
-+ **`pattern`** : Eine JSON-String mit einem regulären Ausdruck, der stets zu den Werten in dieser Spalte passen muss. Der verwendete Syntax für reguläre Ausdrücke entspricht dem Syntax aus JavaScript ([ECMAScript 2024 language specification](https://ecma-international.org/publications-and-standards/standards/ecma-262/)), so wie er in [JSON SChmewa](https://json-schema.org/understanding-json-schema/reference/regular_expressions) beschrieben und genutzt wird.
-+ **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
++ **`pattern`** : Ein JSON-String mit einem regulären Ausdruck, der stets zu den Werten in dieser Spalte passen muss. Der verwendete Syntax für reguläre Ausdrücke entspricht dem Syntax aus JavaScript ([ECMAScript 2024 language specification](https://ecma-international.org/publications-and-standards/standards/ecma-262/)), so wie er in [JSON Schema](https://json-schema.org/understanding-json-schema/reference/regular_expressions) beschrieben und genutzt wird.
++ **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein. 
 
 ##### enum
 
-Einen JSON-String, der ein Aufzählung repräsentiert. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
+Repräsentiert einen JSON-String, der eine Aufzählung repräsentiert. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
 + **`members`** : Definiert die möglichen Werte der Aufzählung. Es MUSS ein JSON-Array mit [`enumMember`](#enummember-objekt)-Objekten sein. **Diese Eigenschaft ist ERFORDERLICH**.
 + **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
 
 ##### enum-set
 
-Einen JSON-Array, der eine Aufzählungmenge repräsentiert. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
+Repräsentiert ein JSON-Array, der eine Aufzählungsmenge repräsentiert. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ **`members`** : Definiert die möglichen Werte der Aufzählungmenge. Es MUSS ein JSON-Array mit [`enumMember`](#enummember-objekt)-Objekten sein. **Diese Eigenschaft ist ERFORDERLICH**.
++ **`members`** : Definiert die möglichen Werte der Aufzählungsmenge. Es MUSS ein JSON-Array mit [`enumMember`](#enummember-objekt)-Objekten sein. **Diese Eigenschaft ist ERFORDERLICH**.
 + **`language`** : Ein JSON-String mit der Sprache für die Inhalte dieser Spalte. Dies MUSS ein [IETF BCP 47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein.
 
 ##### integer
@@ -629,7 +703,7 @@ Einen JSON-Array, der eine Aufzählungmenge repräsentiert. Die folgenden zusät
 Repräsentiert eine JSON-Nummer im Format `integer`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
 + **`minValue`** : Eine JSON-Nummer im Format `integer` mit dem zulässigen Minimalwert.
-+ **`maxValue`** : Eine JSON-Nummer im Format `integer` mit dem zulässigen Minimalwert.
++ **`maxValue`** : Eine JSON-Nummer im Format `integer` mit dem zulässigen Maximalwert.
 
 ##### number
 
@@ -637,39 +711,39 @@ Repräsentiert eine JSON-Nummer im Format `number`. Die folgenden zusätzlichen 
 
 + **`minValue`** : Eine JSON-Nummer im Format `number` mit dem zulässigen Minimalwert.
 + **`exclusiveMinValue`** : Eine JSON-Nummer im Format `number`, welche die exklusive Untergrenze definiert.
-+ **`maxValue`** : Eine JSON-Nummer im Format `number` mit dem zulässigen Minimalwert.
++ **`maxValue`** : Eine JSON-Nummer im Format `number` mit dem zulässigen Maximalwert.
 + **`exclusiveMaxValue`** : Eine JSON-Nummer im Format `number`, welche die exklusive Obergrenze definiert.
 
 ##### boolean
 
-Repräsentiert eine JSON-Nummer im Format `boolean`. Es sind keine zusätzlichen Schema-Eigenschaften verfügbar.
+Repräsentiert eine JSON-Boolean. Es sind keine zusätzlichen Schema-Eigenschaften verfügbar.
 
 ##### date
 
 Repräsentiert ein JSON-String im Format `date`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
 + **`minValue`** : Ein JSON-String im Format `date` mit dem zulässigen Minimalwert.
-+ **`maxValue`** : Ein JSON-String im Format `date` mit dem zulässigen Minimalwert.
++ **`maxValue`** : Ein JSON-String im Format `date` mit dem zulässigen Maximalwert.
 
 ##### date-time
 
 Repräsentiert ein JSON-String im Format `date-time`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
 + **`minValue`** : Ein JSON-String im Format `date-time` mit dem zulässigen Minimalwert.
-+ **`maxValue`** : Ein JSON-String im Format `date-time` mit dem zulässigen Minimalwert.
++ **`maxValue`** : Ein JSON-String im Format `date-time` mit dem zulässigen Maximalwert.
 
 ##### time
 
-Repräsentiert ein JSON-String im Format `time`. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
+Repräsentiert eine lokale Uhrzeit ohne Datum und UTC-Offset im OpenCodeList-Format HH:mm:ss[.fffffff]. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ **`minValue`** : Ein JSON-String im Format `time` mit dem zulässigen Minimalwert.
-+ **`maxValue`** : Ein JSON-String im Format `time` mit dem zulässigen Minimalwert.
++ **`minValue`** : Ein JSON-String mit der minimal zulässigen lokalen Uhrzeit.
++ **`maxValue`** : Ein JSON-String mit der maximal zulässigen lokalen Uhrzeit.
 
-##### object
+##### document
 
-Repräsentiert ein eingebettetes JSON-Objekt. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
+Repräsentiert ein eingebettetes JSON-Objekt oder JSON-Array. Die folgenden zusätzlichen Schema-Eigenschaften sind verfügbar:
 
-+ **`schema`** : Entweder ein JSON-String im Format `uri`, das den Abrufort des JSON-Schemas für diese Spalte definiert, oder ein JSON-Objekt mit einem eingebetteten JSON-Schema.
++ **`schemaUri`** : Ein JSON-String im Format `uri`, der auf ein JSON-Schema zur Validierung der eingebetteten Daten verweist.
 
 #### enumMember-Objekt
 
@@ -681,7 +755,7 @@ Das `enumMember`-Objekt definiert einen Wert in einer Aufzählung:
 
 **`description`**
 
-:   Ein JSON-String mit der Beschreibung des Aufzählungswertes.
+:   Die Beschreibung des Aufzählungswertes. Entweder ein JSON-String oder ein Objekt mit lokalisierten Beschreibungen. Bei einem lokalisierten Objekt MUSS jeder Property-Name ein gültiger [IETF-BCP-47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein und der zugehörige Property-Wert MUSS ein JSON-String sein.
 
 #### key-Objekt
 
@@ -693,15 +767,17 @@ Das `key`-Objekt definiert einen eindeutigen Schlüssel für die Code-Liste:
 
 **`name`**
 
-:   Ein JSON-String mit dem Namen des Schlüssels.
+:   Der Name des Schlüssels. Entweder ein JSON-String oder ein Objekt mit lokalisierten Namen. Bei einem lokalisierten Objekt MUSS jeder Property-Name ein gültiger [IETF-BCP-47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein und der zugehörige Property-Wert MUSS ein JSON-String sein.
 
 **`description`**
 
-:   Ein JSON-String mit einer kurzen Beschreibung des Schlüssels.
+:   Die Beschreibung des Schlüssels. Entweder ein JSON-String oder ein Objekt mit lokalisierten Beschreibungen. Bei einem lokalisierten Objekt MUSS jeder Property-Name ein gültiger [IETF-BCP-47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein und der zugehörige Property-Wert MUSS ein JSON-String sein. 
 
 **`columnIds`**
 
 :   Ein JSON-String-Array mit IDs, die jeweils auf ein [`column`](#column-objekt)-Objekt verweisen. **Diese Eigenschaft ist ERFORDERLICH**.
+
+    Eine Spalte, die Bestandteil eines Schlüssels ist, MUSS `optional: false` und `nullable: false` sein. Die Kombination der Werte der durch `columnIds` referenzierten Spalten MUSS innerhalb des `dataSet` für jede Datenzeile eindeutig sein.
 
 Beispiel:	
 
@@ -735,7 +811,7 @@ Beispiel:
 
 #### foreignKey-Objekt
 
-Das `foreignKey`-Objekt definiert einen Fremdschlüssel zur einer externen Code-Liste:
+Das `foreignKey`-Objekt definiert einen Fremdschlüssel zu einer externen Code-Liste:
 
 **`id`**
 
@@ -743,19 +819,22 @@ Das `foreignKey`-Objekt definiert einen Fremdschlüssel zur einer externen Code-
 
 **`name`**
 
-:   Ein JSON-String mit dem Namen des Fremdschlüssels.
+:   Der Name des Fremdschlüssels. Entweder ein JSON-String oder ein Objekt mit lokalisierten Namen. Bei einem lokalisierten Objekt MUSS jeder Property-Name ein gültiger [IETF-BCP-47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein und der zugehörige Property-Wert MUSS ein JSON-String sein.
 
 **`description`**
 
-:   Ein JSON-String mit einer kurzen Beschreibung des Fremdschlüssels.
+:   Die Beschreibung des Fremdschlüssels. Entweder ein JSON-String oder ein Objekt mit lokalisierten Beschreibungen. Bei einem lokalisierten Objekt MUSS jeder Property-Name ein gültiger [IETF-BCP-47-Sprachtag](https://datatracker.ietf.org/doc/html/rfc5646) sein und der zugehörige Property-Wert MUSS ein JSON-String sein. 
 
 **`columnIds`**
 
 :   Ein JSON-String-Array mit IDs, die jeweils auf ein [`column`](#column-objekt)-Objekt verweisen. **Diese Eigenschaft ist ERFORDERLICH**.
 
+    Die Anzahl der durch `columnIds` referenzierten Spalten MUSS der Anzahl der Spalten des referenzierten Schlüssels entsprechen. Die Datentypen der jeweils korrespondierenden Spalten MÜSSEN übereinstimmen. Die Zuordnung der Spalten erfolgt entsprechend ihrer Reihenfolge.
+
+
 **`keyRef`**
 
-:   Ein `keyRef`-Objekt, das auf einen Schlüssel in einer externe Code-Liste verweist. **Diese Eigenschaft ist ERFORDERLICH**.
+:   Ein `keyRef`-Objekt, das auf einen Schlüssel in einer externen Code-Liste verweist. **Diese Eigenschaft ist ERFORDERLICH**.
 
 Beispiel:	
 
@@ -795,7 +874,7 @@ Das `keyRef`-Objekt definiert eine Referenz auf einen Schlüssel in einer extern
 
 #### codeListRef-Objekt
 
-Das `codeListRef`-Objekt definiert einen Verweis auf eine externe CodeList-Dokument:
+Das `codeListRef`-Objekt definiert einen Verweis auf ein externes CodeList-Dokument:
 
 **`canonicalUri`**
 
@@ -818,19 +897,26 @@ Das `dataSet`-Objekt enthält die Daten einer Code-Liste:
 :   Definiert die Datenzeilen der Code-Liste. Es MUSS ein JSON-Array mit [`row`](#row-objekt)-Objekten sein. **Diese Eigenschaft ist ERFORDERLICH**.
 
 #### row-Objekt
+Das `row`-Objekt definiert eine Datenzeile in einer Code-Liste. Es ist ein JSON-Objekt, dessen Eigenschaften den im [`column`](#column-objekt)-Objekten definierten Spalten entsprechen.
 
-Das `row`-Objekt definiert eine Datenzeile in einer Code-Liste. Ein `row`-Objekt ist ein JSON-Objekt, dessen Eigenschaften sich aus den Spaltendefinitionen der [`column`](#column-objekt)-Objekte ergeben:
++ Für jedes `column`-Objekt mit `optional: false` MUSS das `row`-Objekt eine Eigenschaft enthalten, deren Name der `id` dieser Spalte entspricht.
 
-+ Es MÜSSEN mindestens soviele Eigenschaften vorhanden sein wie es [`column`](#column-objekt)-Objekte mit der Eigenschaft `"optional": false` gibt.
++ Für jedes `column`-Objekt mit `optional: true` KANN die entsprechende Eigenschaft im `row`-Objekt fehlen.
 
-+ Es DÜRFEN höchstens soviele Eigenschaften vorhanden sein wie es [`column`](#column-objekt)-Objekte ingesamt gibt.
++ Das `row`-Objekt DARF keine Eigenschaft enthalten, deren Name keiner `id` eines definierten [`column`](#column-objekt)-Objekts entspricht.
 
-+ Für jede Eigenschaft gilt:
++ Jeder Spalte DARF innerhalb eines `row`-Objekts höchstens eine Eigenschaft zugeordnet sein. Da Eigenschaftsnamen innerhalb eines JSON-Objekts eindeutig sein müssen, kann jede Spalte höchstens einmal pro Datenzeile vorkommen.
 
-    + Der Name enspricht einer ID, die auf ein [`column`](#column-objekt)-Objekt verweist
-	
-	+ Der Wert kann ein JSON-Null-Wert, ein JSON-String, ein JSON-Numeric, ein JSON-Objekt oder ein JSON-Array sein, muss aber mit dem Spaltentyp des [`column`](#column-objekt)-Objekts korrespondieren.
-	
++ Der Wert einer Eigenschaft MUSS dem `type` sowie allen weiteren Einschränkungen des zugehörigen [`column`](#column-objekt)-Objekts entsprechen.
+
++ Abhängig vom Spaltentyp KANN ein Wert ein JSON-Null-Wert, eine JSON-Zahl, ein JSON-Boolean, ein JSON-String, ein JSON-Objekt oder ein JSON-Array sein.
+
++ Ein JSON-Null-Wert DARF nur verwendet werden, wenn die zugehörige Spalte Null-Werte zulässt.
+
++ Ein JSON-Objekt KANN entweder den Wert einer Spalte vom Typ `document` oder einen lokalisierten Wert einer Spalte vom Typ `string` repräsentieren. Bei einem lokalisierten String MUSS jeder Property-Name ein gültiger IETF-BCP-47-Sprachtag und jeder zugehörige Property-Wert ein JSON-String sein.
+
++ Ein JSON-Array DARF nur für Spalten vom Typ `enum-set` oder `document` verwendet werden. Bei einer Spalte vom Typ `enum-set` MUSS jedes Element einem in `members` definierten Aufzählungswert entsprechen.
+
 Beispiel:	
 
 ``` json
@@ -851,21 +937,21 @@ Beispiel:
       {
         "id": "population",
         "name": "Population",
-        "type": "intger"
+        "type": "integer"
       }
-    }
+    ]
   },
   "dataSet": {
     "rows": [
       {
         "code": "BW",
-        "name": "Baden-Württemberg"
-		"population": 11280000
+        "name": "Baden-Württemberg",
+    		"population": 11280000
       },
       {
         "code": "BY",
-        "name": "Bavaria"
-		"population": 7450000
+        "name": "Bavaria",
+		    "population": 7450000
       }
     ]
   }
@@ -893,7 +979,7 @@ Das `documentRef`-Objekt definiert einen Verweis auf ein externes OpenCodeList-D
 
 **`canonicalVersionUri`**
 
-:   Ein JSON-String im Format `uri`. Diese URI identifiziert eine bestimmte Version der referenzierten Dokumentes.
+:   Ein JSON-String im Format `uri`. Diese URI identifiziert eine bestimmte Version des referenzierten Dokumentes.
 
 **`locationUrls`**
 
@@ -901,7 +987,7 @@ Das `documentRef`-Objekt definiert einen Verweis auf ein externes OpenCodeList-D
 
 ### Erweiterung der Spezifikation
 
-Die OpenCodeList-Spezifikation kann an bestimmten Stellen um zusätzliche Daten erweitert werden.
+Die OpenCodeList-Spezifikation kann für das [`identification`](#identification-objekt)-Objekt und für das [`publisher`](#publisher-objekt)-Objekt um zusätzliche Daten erweitert werden.
 
 Die Eigenschaften der Erweiterungen sind als freie Eigenschaften implementiert, denen immer ein `x-` vorangestellt werden MUSS (z.B. `x-external-id`). Der Wert kann eine Zeichenfolge, eine Zahl, ein boolescher Wert, Null, ein Objekt oder ein Array sein.
 
